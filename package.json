@@ -1,0 +1,26 @@
+{
+  "name": "@strongishllama/iam-constants-cdk",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"lib/**/*.ts\"",
+    "generate": "ts-node bin/generate.ts",
+    "test": "jest",
+    "watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strongishllama/iam-constants-cdk.git"
+  },
+  "dependencies": {
+    "@types/node": "^15.6.0",
+    "axios": "^0.21.1",
+    "child_process": "^1.0.2",
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.0"
+  }
+}
