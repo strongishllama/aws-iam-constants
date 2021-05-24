@@ -53,7 +53,7 @@ function generate(responseBody: any): void {
     // So "Amazon S3" becomes "S3".
     let formattedKey = key;
     [" ", "(", ")", "-", "."].forEach((c) => {
-      formattedKey = formattedKey.split(c).join("_");
+      formattedKey = formattedKey.split(c).join("");
     });
     ["Amazon", "AWS"].forEach((c) => {
       formattedKey = formattedKey.split(c).join("");
@@ -63,7 +63,7 @@ function generate(responseBody: any): void {
     }
 
     // Write the start of the enum to actions.ts.
-    stream.write(`export enum ${formattedKey.toUpperCase()} {\n`);
+    stream.write(`export enum ${formattedKey} {\n`);
 
     // Format the actions and write them to actions.ts.
     service["Actions"].forEach((action: string) => {
