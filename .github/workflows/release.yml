@@ -1,0 +1,39 @@
+name: Release
+on:
+  push:
+    tags:
+      - v*
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
+        registry-url: 'https://npm.pkg.github.com'
+        scope: '@strongishllama'
+    # Skip post-install scripts here, as a malicious script could steal NPM_AUTH_TOKEN.
+    - name: Install (ignore scripts)
+      run: |
+        npm ci --ignore-scripts
+    - name: Build
+      run: |
+        npm run build
+    - name: Publish
+      name: |
+        npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  release:
+    name: Release
+    needs: [ publish ]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Release
+      run: |
+        gh release create ${GITHUB_REF#refs/*/} --title ${GITHUB_REF#refs/*/}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
