@@ -15,8 +15,8 @@
     "url": "git+https://github.com/strongishllama/iam-constants-cdk.git"
   },
   "devDependencies": {
-    "@types/node": "^15.6.0",
+    "@types/node": "^16.4.6",
     "axios": "^0.21.1",
-    "prettier": "^2.3.0"
+    "prettier": "^2.3.2"
   }
 }
