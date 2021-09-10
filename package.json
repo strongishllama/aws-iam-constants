@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@types/node": "^16.9.1",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "prettier": "^2.3.2"
   }
 }
