@@ -35,7 +35,7 @@ jobs:
       run: npm run build
     - name: Publish
       run: |
-        echo //npm.pkg.github.com/:_authToken=\${NODE_AUTH_TOKEN} >> .npmrc
+        echo registry=https://npm.pkg.github.com/@strongishllama >> .npmrc
         npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -55,7 +55,7 @@ jobs:
     - name: Build
       run: npm run build
     - name: Publish
-      run: npm publish
+      run: npm publish --access public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   release:
