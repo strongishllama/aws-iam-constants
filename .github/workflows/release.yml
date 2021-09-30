@@ -39,7 +39,7 @@ jobs:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   publish-npm:
     name: Publish NPM
-    needs: [ publish-github ]
+    needs: [ test ]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -58,7 +58,7 @@ jobs:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   release:
     name: Release
-    needs: [ publish-npm ]
+    needs: [ test ]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
