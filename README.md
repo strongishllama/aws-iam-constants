@@ -1,6 +1,6 @@
 # AWS IAM Constants
 
-![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/strongishllama/aws-iam-constants?include_prereleases)
+![NPN version](https://img.shields.io/npm/v/@strongishllama/aws-iam-constants)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/strongishllama/aws-iam-constants/main/LICENSE)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/strongishllama/aws-iam-constants/Release)
 
