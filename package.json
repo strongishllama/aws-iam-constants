@@ -1,5 +1,5 @@
 {
-  "name": "@strongishllama/iam-constants-cdk",
+  "name": "@strongishllama/iam-constants",
   "version": "0.1.4",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -12,11 +12,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/strongishllama/iam-constants-cdk.git"
+    "url": "git+https://github.com/strongishllama/iam-constants.git"
   },
   "devDependencies": {
+    "typescript": "^4.4.3",
     "@types/node": "^16.9.6",
     "axios": "^0.21.2",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "ts-node": "^10.2.1"
   }
 }

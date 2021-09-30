@@ -1,8 +1,8 @@
-# IAM Constants CDK
+# IAM Constants
 
-![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/strongishllama/iam-constants-cdk?include_prereleases)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/strongishllama/iam-constants-cdk/main/LICENSE)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/strongishllama/iam-constants-cdk/Release)
+![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/strongishllama/iam-constants?include_prereleases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/strongishllama/iam-constants/main/LICENSE)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/strongishllama/iam-constants/Release)
 
 ## Introduction
 * Contains a generated enum list of all IAM actions.
