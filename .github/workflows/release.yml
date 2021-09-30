@@ -29,13 +29,14 @@ jobs:
         node-version: '14.x'
         registry-url: 'https://npm.pkg.github.com'
         scope: '@strongishllama'
-    # Skip post-install scripts here, as a malicious script could steal NPM_AUTH_TOKEN.
     - name: Install (ignore scripts)
       run: npm ci --ignore-scripts
     - name: Build
       run: npm run build
     - name: Publish
-      run: npm publish
+      run: |
+        echo //npm.pkg.github.com/:_authToken=\${NPM_AUTH_TOKEN} >> .npmrc
+        npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   publish-npm:
@@ -49,7 +50,6 @@ jobs:
         node-version: '14.x'
         registry-url: 'https://registry.npmjs.org'
         scope: '@strongishllama'
-    # Skip post-install scripts here, as a malicious script could steal NPM_AUTH_TOKEN.
     - name: Install (ignore scripts)
       run: npm ci --ignore-scripts
     - name: Build
