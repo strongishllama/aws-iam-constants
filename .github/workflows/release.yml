@@ -60,6 +60,8 @@ jobs:
     name: Release
     needs: [ test ]
     runs-on: ubuntu-latest
+    # Don't create a release if the tag is a release candidate.
+    if: "!contains('${GITHUB_REF#refs/*/}', '-rc.')"
     steps:
     - uses: actions/checkout@v2
     - name: Release
