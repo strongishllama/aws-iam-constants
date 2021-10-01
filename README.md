@@ -11,7 +11,7 @@
 
 ## Installation
 ```
-npm i @strongishllama/aws-iam-constants
+npm install @strongishllama/aws-iam-constants
 ```
 
 ## Example
