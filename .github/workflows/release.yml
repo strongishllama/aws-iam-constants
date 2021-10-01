@@ -18,27 +18,8 @@ jobs:
         run: npm ci --ignore-scripts
       - name: Build
         run: npm run build
-  publish-github:
-    name: Publish GitHub
-    needs: [ test ]
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '14.x'
-        registry-url: 'https://npm.pkg.github.com'
-        scope: '@strongishllama'
-    - name: Install (ignore scripts)
-      run: npm ci --ignore-scripts
-    - name: Build
-      run: npm run build
-    - name: Publish
-      run: npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  publish-npm:
-    name: Publish NPM
+  publish:
+    name: Publish
     needs: [ test ]
     runs-on: ubuntu-latest
     steps:
