@@ -9,6 +9,11 @@
 * Start building AWS IAM policy statements without having to check for typos in your actions.
 * See a full list of available actions for a service.
 
+## Installation
+```
+npm install @strongishllama/aws-iam-constants
+```
+
 ## Example
 ```ts
 new iam.PolicyStatement({
