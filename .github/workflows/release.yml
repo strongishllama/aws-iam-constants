@@ -18,9 +18,31 @@ jobs:
         run: npm ci --ignore-scripts
       - name: Build
         run: npm run build
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ javascript ]
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+      with:
+        languages: ${{ matrix.language }}
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v1
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
   publish:
     name: Publish
-    needs: [ test ]
+    needs: [ analyze, test ]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -39,7 +61,7 @@ jobs:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   release:
     name: Release
-    needs: [ test ]
+    needs: [ analyze, test ]
     runs-on: ubuntu-latest
     # Don't create a release if the tag is a release candidate.
     if: "!contains('${GITHUB_REF#refs/*/}', '-rc.')"
