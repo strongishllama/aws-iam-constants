@@ -17,7 +17,7 @@
   "license": "MIT",
   "devDependencies": {
     "typescript": "^4.4.3",
-    "@types/node": "^16.10.2",
+    "@types/node": "^16.10.3",
     "axios": "^0.22.0",
     "prettier": "^2.4.1",
     "ts-node": "^10.2.1"
