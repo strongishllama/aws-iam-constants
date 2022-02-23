@@ -40,9 +40,11 @@ function generate(responseBody: any): void {
 
   // Create a new actions.ts file.
   const stream = fs.createWriteStream("lib/actions.ts");
-  stream.write("// This file is generated from bin/generate.ts. Do not edit directly.\n")
+  stream.write(
+    "// This file is generated from bin/generate.ts. Do not edit directly.\n"
+  );
 
-  // Loop over the keys in build the contense.
+  // Loop over the keys in build the contents.
   for (const key of Object.keys(data["serviceMap"])) {
     // Fetch the service. For example, "Amazon S3".
     const service = data["serviceMap"][key];

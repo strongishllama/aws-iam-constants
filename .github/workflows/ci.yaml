@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    name: Lint
+    uses: strongishllama/github-actions/.github/workflows/npm-lint.yaml@main
+  test:
+    name: Test
+    uses: strongishllama/github-actions/.github/workflows/npm-build.yaml@main
+  bump-tag:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs:
+      - lint
+      - test
+    name: Bump Tag
+    uses: strongishllama/github-actions/.github/workflows/bump-tag.yaml@main
+  release:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs:
+      - bump-tag
+    name: Release
+    uses: strongishllama/github-actions/.github/workflows/github-release.yaml@main
+    with:
+      tag: ${{ needs.bump-tag.outputs.bumped-tag }}
+    secrets:
+      github-token: ${{ secrets.GITHUB_TOKEN }}
+  publish:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs:
+      - release
+    name: Publish
+    uses: strongishllama/github-actions/.github/workflows/npm-publish.yaml@main
+    with:
+      scope: "@strongishllama"
+    secrets:
+      npm-token: ${{ secrets.NPM_TOKEN }}

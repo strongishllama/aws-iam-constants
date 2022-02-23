@@ -5,7 +5,8 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "format": "prettier --write \"lib/**/*.ts\"",
+    "format": "prettier --write '**/*.ts'",
+    "format-check": "prettier --check '**/*.ts'",
     "generate": "ts-node bin/generate.ts",
     "test": "jest",
     "watch": "tsc -w"
