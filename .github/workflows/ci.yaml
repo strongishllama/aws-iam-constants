@@ -35,10 +35,12 @@ jobs:
   publish:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     needs:
+      - bump-tag
       - release
     name: Publish
     uses: strongishllama/github-actions/.github/workflows/npm-publish.yaml@main
     with:
       scope: "@strongishllama"
+      package-version: ${{ needs.bump-tag.outputs.bumped-tag }}
     secrets:
       npm-token: ${{ secrets.NPM_TOKEN }}
