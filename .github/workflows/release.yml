@@ -1,8 +1,10 @@
 name: Release
+
 on:
   push:
     tags:
       - v*
+
 jobs:
   test:
     name: Test
@@ -29,44 +31,44 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'javascript' ]
+        language: ["javascript"]
     steps:
-    - uses: actions/checkout@v2
-    - uses: github/codeql-action/init@v1
-      with:
-        languages: ${{ matrix.language }}
-    - uses: github/codeql-action/autobuild@v1
-    - uses: github/codeql-action/analyze@v1
+      - uses: actions/checkout@v2
+      - uses: github/codeql-action/init@v1
+        with:
+          languages: ${{ matrix.language }}
+      - uses: github/codeql-action/autobuild@v1
+      - uses: github/codeql-action/analyze@v1
 
   publish:
     name: Publish
-    needs: [ test, analyze ]
+    needs: [test, analyze]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '14.x'
-        registry-url: 'https://registry.npmjs.org'
-        scope: '@strongishllama'
-    - name: Install (ignore scripts)
-      run: npm ci --ignore-scripts
-    - name: Build
-      run: npm run build
-    - name: Publish
-      run: npm publish --access public
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14.x"
+          registry-url: "https://registry.npmjs.org"
+          scope: "@strongishllama"
+      - name: Install (ignore scripts)
+        run: npm ci --ignore-scripts
+      - name: Build
+        run: npm run build
+      - name: Publish
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   release:
     name: Release
-    needs: [ test, analyze ]
+    needs: [test, analyze]
     runs-on: ubuntu-latest
     # Don't create a release if the tag is a release candidate.
     if: "!contains('${GITHUB_REF#refs/*/}', '-rc.')"
     steps:
-    - uses: actions/checkout@v2
-    - name: Release
-      run: gh release create ${GITHUB_REF#refs/*/} --title ${GITHUB_REF#refs/*/}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v2
+      - name: Release
+        run: gh release create ${GITHUB_REF#refs/*/} --title ${GITHUB_REF#refs/*/}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
