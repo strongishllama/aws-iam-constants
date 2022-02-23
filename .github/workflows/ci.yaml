@@ -28,7 +28,7 @@ jobs:
       - bump-tag
     name: Release
     uses: strongishllama/github-actions/.github/workflows/github-release.yaml@main
-    with:
+    secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
   publish:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
@@ -38,4 +38,5 @@ jobs:
     uses: strongishllama/github-actions/.github/workflows/npm-publish.yaml@main
     with:
       scope: "@strongishllama"
+    secrets:
       npm-token: ${{ secrets.NPM_TOKEN }}
