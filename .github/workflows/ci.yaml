@@ -12,14 +12,14 @@ jobs:
   lint:
     name: Lint
     uses: strongishllama/github-actions/.github/workflows/npm-lint.yaml@main
-  build:
-    name: Build
+  test:
+    name: Test
     uses: strongishllama/github-actions/.github/workflows/npm-build.yaml@main
   bump-tag:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     needs:
       - lint
-      - build
+      - test
     name: Bump Tag
     uses: strongishllama/github-actions/.github/workflows/bump-tag.yaml@main
   release:
