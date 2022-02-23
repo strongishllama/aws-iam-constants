@@ -28,6 +28,8 @@ jobs:
       - bump-tag
     name: Release
     uses: strongishllama/github-actions/.github/workflows/github-release.yaml@main
+    with:
+      tag: ${{ needs.bump-tag.outputs.bumped-tag }}
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
   publish:
