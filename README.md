@@ -2,7 +2,7 @@
 
 ![NPN version](https://img.shields.io/npm/v/@strongishllama/aws-iam-constants)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/strongishllama/aws-iam-constants/main/LICENSE)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/strongishllama/aws-iam-constants/Release)
+[![CI](https://github.com/strongishllama/aws-iam-constants/actions/workflows/ci.yaml/badge.svg)](https://github.com/strongishllama/aws-iam-constants/actions/workflows/ci.yaml)
 
 ## Introduction
 * Contains a generated enum list of all AWS IAM actions.
