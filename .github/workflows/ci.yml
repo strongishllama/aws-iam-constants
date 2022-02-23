@@ -2,41 +2,40 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14.x
-      - name: Install (ignore scripts)
-        run: npm ci --ignore-scripts
-      - name: Build
-        run: npm run build
-
-  analyze:
-    name: Analyze
-    runs-on: ubuntu-latest
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [ 'javascript' ]
-    steps:
-    - uses: actions/checkout@v2
-    - uses: github/codeql-action/init@v1
-      with:
-        languages: ${{ matrix.language }}
-    - uses: github/codeql-action/autobuild@v1
-    - uses: github/codeql-action/analyze@v1
+  lint:
+    name: Lint
+    uses: strongishllama/github-actions/.github/workflows/typescript-lint.yaml@main
+  build:
+    name: Build
+    uses: strongishllama/github-actions/.github/workflows/npm-build.yaml@main
+  bump-tag:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs:
+      - lint
+      - build
+    name: Bump Tag
+    uses: strongishllama/github-actions/.github/workflows/bump-tag.yaml@main
+  release:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs:
+      - bump-tag
+    name: Release
+    uses: strongishllama/github-actions/.github/workflows/github-release.yaml@main
+    with:
+      github-token: ${{ secrets.GITHUB_TOKEN }}
+  publish:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs:
+      - release
+    name: Publish
+    uses: strongishllama/github-actions/.github/workflows/npm-publish.yaml@main
+    with:
+      scope: "@strongishllama"
+      npm-token: ${{ secrets.NPM_TOKEN }}
