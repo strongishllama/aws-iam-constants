@@ -1,0 +1,38 @@
+name: Update Actions
+on:
+  schedule:
+    - cron: "0 18 * * 5"
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  update-actions:
+    name: Update Actions
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install Dependencies (ignore scripts)
+        run: npm ci --ignore-scripts
+      - name: Run Generate
+        run: npm run generate
+      - name: Run Format
+        run: npm run format
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          assignees: ${{ github.actor }}
+          branch: auto-generate-actions-from-workflow
+          commit-message: "fix: auto-updated actions list"
+          committer: strongishllama <taliesin@millhouse.dev>
+          delete-branch: true
+          title: "fix: auto-updated actions list"
+          token: ${{ secrets.GITHUB_TOKEN }}
