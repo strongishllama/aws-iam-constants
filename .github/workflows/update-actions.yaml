@@ -36,4 +36,3 @@ jobs:
           delete-branch: true
           title: "fix: auto-updated actions list"
           token: ${{ secrets.GITHUB_TOKEN }}
-          base: main
