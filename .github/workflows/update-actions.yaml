@@ -27,7 +27,7 @@ jobs:
       - name: Run Generate
         run: npm run generate
       - name: Run Format
-        run: npm run Format
+        run: npm run format
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
