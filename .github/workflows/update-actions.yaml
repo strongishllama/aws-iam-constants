@@ -27,7 +27,7 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           add-paths: |
-            lib/*
+            *
           assignees: ${{ github.actor }}
           branch: auto-generate-actions-from-workflow
           commit-message: "fix: auto-updated actions list"
