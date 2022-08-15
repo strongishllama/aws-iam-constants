@@ -25,9 +25,9 @@ jobs:
       - name: Install Dependencies (ignore scripts)
         run: npm ci --ignore-scripts
       - name: Run Generate
-        run: npm generate
+        run: npm run generate
       - name: Run Format
-        run: npm Format
+        run: npm run Format
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
