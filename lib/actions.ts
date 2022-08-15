@@ -70,6 +70,7 @@ export enum Comprehend {
   STOP_TRAINING_ENTITY_RECOGNIZER = "comprehend:StopTrainingEntityRecognizer",
   TAG_RESOURCE = "comprehend:TagResource",
   UNTAG_RESOURCE = "comprehend:UntagResource",
+  UPDATE_ENDPOINT = "comprehend:UpdateEndpoint",
 }
 
 export enum ElasticFileSystem {
