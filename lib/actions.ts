@@ -5,6 +5,7 @@ export enum Comprehend {
   BATCH_DETECT_KEY_PHRASES = "comprehend:BatchDetectKeyPhrases",
   BATCH_DETECT_SENTIMENT = "comprehend:BatchDetectSentiment",
   BATCH_DETECT_SYNTAX = "comprehend:BatchDetectSyntax",
+  BATCH_DETECT_TARGETED_SENTIMENT = "comprehend:BatchDetectTargetedSentiment",
   CLASSIFY_DOCUMENT = "comprehend:ClassifyDocument",
   CONTAINS_PII_ENTITIES = "comprehend:ContainsPiiEntities",
   CREATE_DOCUMENT_CLASSIFIER = "comprehend:CreateDocumentClassifier",
@@ -33,6 +34,7 @@ export enum Comprehend {
   DETECT_PII_ENTITIES = "comprehend:DetectPiiEntities",
   DETECT_SENTIMENT = "comprehend:DetectSentiment",
   DETECT_SYNTAX = "comprehend:DetectSyntax",
+  DETECT_TARGETED_SENTIMENT = "comprehend:DetectTargetedSentiment",
   IMPORT_MODEL = "comprehend:ImportModel",
   LIST_DOCUMENT_CLASSIFICATION_JOBS = "comprehend:ListDocumentClassificationJobs",
   LIST_DOCUMENT_CLASSIFIER_SUMMARIES = "comprehend:ListDocumentClassifierSummaries",
@@ -8257,7 +8259,7 @@ export enum ElasticTranscoder {
 }
 
 export enum IoTFleetWise {
-  ASSOCIATE_VEHICLE = "iotfleetwise:AssociateVehicle",
+  ASSOCIATE_VEHICLE_FLEET = "iotfleetwise:AssociateVehicleFleet",
   CREATE_CAMPAIGN = "iotfleetwise:CreateCampaign",
   CREATE_DECODER_MANIFEST = "iotfleetwise:CreateDecoderManifest",
   CREATE_FLEET = "iotfleetwise:CreateFleet",
@@ -8270,10 +8272,11 @@ export enum IoTFleetWise {
   DELETE_MODEL_MANIFEST = "iotfleetwise:DeleteModelManifest",
   DELETE_SIGNAL_CATALOG = "iotfleetwise:DeleteSignalCatalog",
   DELETE_VEHICLE = "iotfleetwise:DeleteVehicle",
-  DISASSOCIATE_VEHICLE = "iotfleetwise:DisassociateVehicle",
+  DISASSOCIATE_VEHICLE_FLEET = "iotfleetwise:DisassociateVehicleFleet",
   GET_CAMPAIGN = "iotfleetwise:GetCampaign",
   GET_DECODER_MANIFEST = "iotfleetwise:GetDecoderManifest",
   GET_FLEET = "iotfleetwise:GetFleet",
+  GET_LOGGING_OPTIONS = "iotfleetwise:GetLoggingOptions",
   GET_MODEL_MANIFEST = "iotfleetwise:GetModelManifest",
   GET_REGISTER_ACCOUNT_STATUS = "iotfleetwise:GetRegisterAccountStatus",
   GET_SIGNAL_CATALOG = "iotfleetwise:GetSignalCatalog",
@@ -8291,9 +8294,13 @@ export enum IoTFleetWise {
   LIST_MODEL_MANIFESTS = "iotfleetwise:ListModelManifests",
   LIST_SIGNAL_CATALOG_NODES = "iotfleetwise:ListSignalCatalogNodes",
   LIST_SIGNAL_CATALOGS = "iotfleetwise:ListSignalCatalogs",
+  LIST_TAGS_FOR_RESOURCE = "iotfleetwise:ListTagsForResource",
   LIST_VEHICLES = "iotfleetwise:ListVehicles",
   LIST_VEHICLES_IN_FLEET = "iotfleetwise:ListVehiclesInFleet",
+  PUT_LOGGING_OPTIONS = "iotfleetwise:PutLoggingOptions",
   REGISTER_ACCOUNT = "iotfleetwise:RegisterAccount",
+  TAG_RESOURCE = "iotfleetwise:TagResource",
+  UNTAG_RESOURCE = "iotfleetwise:UntagResource",
   UPDATE_CAMPAIGN = "iotfleetwise:UpdateCampaign",
   UPDATE_DECODER_MANIFEST = "iotfleetwise:UpdateDecoderManifest",
   UPDATE_FLEET = "iotfleetwise:UpdateFleet",
@@ -8488,6 +8495,7 @@ export enum DatabaseMigrationService {
   DESCRIBE_EVENT_SUBSCRIPTIONS = "dms:DescribeEventSubscriptions",
   DESCRIBE_EVENTS = "dms:DescribeEvents",
   DESCRIBE_ORDERABLE_REPLICATION_INSTANCES = "dms:DescribeOrderableReplicationInstances",
+  DESCRIBE_PENDING_MAINTENANCE_ACTIONS = "dms:DescribePendingMaintenanceActions",
   DESCRIBE_REFRESH_SCHEMAS_STATUS = "dms:DescribeRefreshSchemasStatus",
   DESCRIBE_REPLICATION_INSTANCE_TASK_LOGS = "dms:DescribeReplicationInstanceTaskLogs",
   DESCRIBE_REPLICATION_INSTANCES = "dms:DescribeReplicationInstances",
@@ -13739,6 +13747,7 @@ export enum Neptune {
   START_M_L_MODEL_TRAINING_JOB = "neptune-db:StartMLModelTrainingJob",
   START_M_L_MODEL_TRANSFORM_JOB = "neptune-db:StartMLModelTransformJob",
   WRITE_DATA_VIA_QUERY = "neptune-db:WriteDataViaQuery",
+  ONNECT = "neptune-db:connect",
 }
 
 export enum DataSync {
