@@ -4261,6 +4261,7 @@ export enum Inspector2 {
   DISASSOCIATE_MEMBER = "inspector2:DisassociateMember",
   ENABLE = "inspector2:Enable",
   ENABLE_DELEGATED_ADMIN_ACCOUNT = "inspector2:EnableDelegatedAdminAccount",
+  GET_CONFIGURATION = "inspector2:GetConfiguration",
   GET_DELEGATED_ADMIN_ACCOUNT = "inspector2:GetDelegatedAdminAccount",
   GET_FINDINGS_REPORT_STATUS = "inspector2:GetFindingsReportStatus",
   GET_MEMBER = "inspector2:GetMember",
@@ -4276,6 +4277,7 @@ export enum Inspector2 {
   LIST_USAGE_TOTALS = "inspector2:ListUsageTotals",
   TAG_RESOURCE = "inspector2:TagResource",
   UNTAG_RESOURCE = "inspector2:UntagResource",
+  UPDATE_CONFIGURATION = "inspector2:UpdateConfiguration",
   UPDATE_FILTER = "inspector2:UpdateFilter",
   UPDATE_ORGANIZATION_CONFIGURATION = "inspector2:UpdateOrganizationConfiguration",
 }
@@ -7839,8 +7841,10 @@ export enum ConnectCases {
   GET_LAYOUT = "cases:GetLayout",
   GET_TEMPLATE = "cases:GetTemplate",
   LIST_CASES_FOR_CONTACT = "cases:ListCasesForContact",
+  LIST_DOMAINS = "cases:ListDomains",
   LIST_FIELD_OPTIONS = "cases:ListFieldOptions",
   LIST_FIELDS = "cases:ListFields",
+  LIST_LAYOUTS = "cases:ListLayouts",
   LIST_TAGS_FOR_RESOURCE = "cases:ListTagsForResource",
   LIST_TEMPLATES = "cases:ListTemplates",
   PUT_CASE_EVENT_CONFIGURATION = "cases:PutCaseEventConfiguration",
@@ -8155,6 +8159,7 @@ export enum Lightsail {
   UPDATE_DISTRIBUTION = "lightsail:UpdateDistribution",
   UPDATE_DISTRIBUTION_BUNDLE = "lightsail:UpdateDistributionBundle",
   UPDATE_DOMAIN_ENTRY = "lightsail:UpdateDomainEntry",
+  UPDATE_INSTANCE_METADATA_OPTIONS = "lightsail:UpdateInstanceMetadataOptions",
   UPDATE_LOAD_BALANCER_ATTRIBUTE = "lightsail:UpdateLoadBalancerAttribute",
   UPDATE_RELATIONAL_DATABASE = "lightsail:UpdateRelationalDatabase",
   UPDATE_RELATIONAL_DATABASE_PARAMETERS = "lightsail:UpdateRelationalDatabaseParameters",
@@ -8226,6 +8231,7 @@ export enum EMRServerless {
   CREATE_APPLICATION = "emr-serverless:CreateApplication",
   DELETE_APPLICATION = "emr-serverless:DeleteApplication",
   GET_APPLICATION = "emr-serverless:GetApplication",
+  GET_DASHBOARD_FOR_JOB_RUN = "emr-serverless:GetDashboardForJobRun",
   GET_JOB_RUN = "emr-serverless:GetJobRun",
   LIST_APPLICATIONS = "emr-serverless:ListApplications",
   LIST_JOB_RUNS = "emr-serverless:ListJobRuns",
@@ -8896,6 +8902,12 @@ export enum Honeycode {
   TAG_RESOURCE = "honeycode:TagResource",
   UNTAG_RESOURCE = "honeycode:UntagResource",
   UPDATE_TEAM = "honeycode:UpdateTeam",
+}
+
+export enum SupportPlans {
+  GET_SUPPORT_PLAN = "supportplans:GetSupportPlan",
+  GET_SUPPORT_PLAN_UPDATE_STATUS = "supportplans:GetSupportPlanUpdateStatus",
+  START_SUPPORT_PLAN_UPDATE = "supportplans:StartSupportPlanUpdate",
 }
 
 export enum IQ {
@@ -9579,6 +9591,7 @@ export enum FSx {
   CREATE_BACKUP = "fsx:CreateBackup",
   CREATE_DATA_REPOSITORY_ASSOCIATION = "fsx:CreateDataRepositoryAssociation",
   CREATE_DATA_REPOSITORY_TASK = "fsx:CreateDataRepositoryTask",
+  CREATE_FILE_CACHE = "fsx:CreateFileCache",
   CREATE_FILE_SYSTEM = "fsx:CreateFileSystem",
   CREATE_FILE_SYSTEM_FROM_BACKUP = "fsx:CreateFileSystemFromBackup",
   CREATE_SNAPSHOT = "fsx:CreateSnapshot",
@@ -9587,6 +9600,7 @@ export enum FSx {
   CREATE_VOLUME_FROM_BACKUP = "fsx:CreateVolumeFromBackup",
   DELETE_BACKUP = "fsx:DeleteBackup",
   DELETE_DATA_REPOSITORY_ASSOCIATION = "fsx:DeleteDataRepositoryAssociation",
+  DELETE_FILE_CACHE = "fsx:DeleteFileCache",
   DELETE_FILE_SYSTEM = "fsx:DeleteFileSystem",
   DELETE_SNAPSHOT = "fsx:DeleteSnapshot",
   DELETE_STORAGE_VIRTUAL_MACHINE = "fsx:DeleteStorageVirtualMachine",
@@ -9595,6 +9609,7 @@ export enum FSx {
   DESCRIBE_BACKUPS = "fsx:DescribeBackups",
   DESCRIBE_DATA_REPOSITORY_ASSOCIATIONS = "fsx:DescribeDataRepositoryAssociations",
   DESCRIBE_DATA_REPOSITORY_TASKS = "fsx:DescribeDataRepositoryTasks",
+  DESCRIBE_FILE_CACHES = "fsx:DescribeFileCaches",
   DESCRIBE_FILE_SYSTEM_ALIASES = "fsx:DescribeFileSystemAliases",
   DESCRIBE_FILE_SYSTEMS = "fsx:DescribeFileSystems",
   DESCRIBE_SNAPSHOTS = "fsx:DescribeSnapshots",
@@ -9609,6 +9624,7 @@ export enum FSx {
   TAG_RESOURCE = "fsx:TagResource",
   UNTAG_RESOURCE = "fsx:UntagResource",
   UPDATE_DATA_REPOSITORY_ASSOCIATION = "fsx:UpdateDataRepositoryAssociation",
+  UPDATE_FILE_CACHE = "fsx:UpdateFileCache",
   UPDATE_FILE_SYSTEM = "fsx:UpdateFileSystem",
   UPDATE_SNAPSHOT = "fsx:UpdateSnapshot",
   UPDATE_STORAGE_VIRTUAL_MACHINE = "fsx:UpdateStorageVirtualMachine",
@@ -9744,6 +9760,7 @@ export enum MigrationHubStrategyRecommendations {
   GET_APPLICATION_COMPONENT_STRATEGIES = "migrationhub-strategy:GetApplicationComponentStrategies",
   GET_ASSESSMENT = "migrationhub-strategy:GetAssessment",
   GET_IMPORT_FILE_TASK = "migrationhub-strategy:GetImportFileTask",
+  GET_LATEST_ASSESSMENT_ID = "migrationhub-strategy:GetLatestAssessmentId",
   GET_MESSAGE = "migrationhub-strategy:GetMessage",
   GET_PORTFOLIO_PREFERENCES = "migrationhub-strategy:GetPortfolioPreferences",
   GET_PORTFOLIO_SUMMARY = "migrationhub-strategy:GetPortfolioSummary",
@@ -9764,6 +9781,7 @@ export enum MigrationHubStrategyRecommendations {
   START_RECOMMENDATION_REPORT_GENERATION = "migrationhub-strategy:StartRecommendationReportGeneration",
   STOP_ASSESSMENT = "migrationhub-strategy:StopAssessment",
   UPDATE_APPLICATION_COMPONENT_CONFIG = "migrationhub-strategy:UpdateApplicationComponentConfig",
+  UPDATE_COLLECTOR_CONFIGURATION = "migrationhub-strategy:UpdateCollectorConfiguration",
   UPDATE_SERVER_CONFIG = "migrationhub-strategy:UpdateServerConfig",
 }
 
@@ -10452,6 +10470,7 @@ export enum EC2 {
   MODIFY_IPAM_RESOURCE_CIDR = "ec2:ModifyIpamResourceCidr",
   MODIFY_IPAM_SCOPE = "ec2:ModifyIpamScope",
   MODIFY_LAUNCH_TEMPLATE = "ec2:ModifyLaunchTemplate",
+  MODIFY_LOCAL_GATEWAY_ROUTE = "ec2:ModifyLocalGatewayRoute",
   MODIFY_MANAGED_PREFIX_LIST = "ec2:ModifyManagedPrefixList",
   MODIFY_NETWORK_INTERFACE_ATTRIBUTE = "ec2:ModifyNetworkInterfaceAttribute",
   MODIFY_PRIVATE_DNS_NAME_OPTIONS = "ec2:ModifyPrivateDnsNameOptions",
