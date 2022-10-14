@@ -11767,6 +11767,7 @@ export enum LookoutforEquipment {
   DESCRIBELABEL = "lookoutequipment:Describelabel",
   LIST_DATA_INGESTION_JOBS = "lookoutequipment:ListDataIngestionJobs",
   LIST_DATASETS = "lookoutequipment:ListDatasets",
+  LIST_INFERENCE_EVENTS = "lookoutequipment:ListInferenceEvents",
   LIST_INFERENCE_EXECUTIONS = "lookoutequipment:ListInferenceExecutions",
   LIST_INFERENCE_SCHEDULERS = "lookoutequipment:ListInferenceSchedulers",
   LIST_LABEL_GROUPS = "lookoutequipment:ListLabelGroups",
@@ -11831,11 +11832,14 @@ export enum Translate {
   IMPORT_TERMINOLOGY = "translate:ImportTerminology",
   LIST_LANGUAGES = "translate:ListLanguages",
   LIST_PARALLEL_DATA = "translate:ListParallelData",
+  LIST_TAGS_FOR_RESOURCE = "translate:ListTagsForResource",
   LIST_TERMINOLOGIES = "translate:ListTerminologies",
   LIST_TEXT_TRANSLATION_JOBS = "translate:ListTextTranslationJobs",
   START_TEXT_TRANSLATION_JOB = "translate:StartTextTranslationJob",
   STOP_TEXT_TRANSLATION_JOB = "translate:StopTextTranslationJob",
+  TAG_RESOURCE = "translate:TagResource",
   TRANSLATE_TEXT = "translate:TranslateText",
+  UNTAG_RESOURCE = "translate:UntagResource",
   UPDATE_PARALLEL_DATA = "translate:UpdateParallelData",
 }
 
