@@ -1964,6 +1964,7 @@ export enum SageMaker {
   LIST_HYPER_PARAMETER_TUNING_JOBS = "sagemaker:ListHyperParameterTuningJobs",
   LIST_IMAGE_VERSIONS = "sagemaker:ListImageVersions",
   LIST_IMAGES = "sagemaker:ListImages",
+  LIST_INFERENCE_RECOMMENDATIONS_JOB_STEPS = "sagemaker:ListInferenceRecommendationsJobSteps",
   LIST_INFERENCE_RECOMMENDATIONS_JOBS = "sagemaker:ListInferenceRecommendationsJobs",
   LIST_LABELING_JOBS = "sagemaker:ListLabelingJobs",
   LIST_LABELING_JOBS_FOR_WORKTEAM = "sagemaker:ListLabelingJobsForWorkteam",
@@ -4859,16 +4860,23 @@ export enum XRay {
 }
 
 export enum CloudWatchRUM {
+  BATCH_CREATE_RUM_METRIC_DEFINITIONS = "rum:BatchCreateRumMetricDefinitions",
+  BATCH_DELETE_RUM_METRIC_DEFINITIONS = "rum:BatchDeleteRumMetricDefinitions",
+  BATCH_GET_RUM_METRIC_DEFINITIONS = "rum:BatchGetRumMetricDefinitions",
   CREATE_APP_MONITOR = "rum:CreateAppMonitor",
   DELETE_APP_MONITOR = "rum:DeleteAppMonitor",
+  DELETE_RUM_METRICS_DESTINATION = "rum:DeleteRumMetricsDestination",
   GET_APP_MONITOR = "rum:GetAppMonitor",
   GET_APP_MONITOR_DATA = "rum:GetAppMonitorData",
   LIST_APP_MONITORS = "rum:ListAppMonitors",
+  LIST_RUM_METRICS_DESTINATIONS = "rum:ListRumMetricsDestinations",
   LIST_TAGS_FOR_RESOURCE = "rum:ListTagsForResource",
   PUT_RUM_EVENTS = "rum:PutRumEvents",
+  PUT_RUM_METRICS_DESTINATION = "rum:PutRumMetricsDestination",
   TAG_RESOURCE = "rum:TagResource",
   UNTAG_RESOURCE = "rum:UntagResource",
   UPDATE_APP_MONITOR = "rum:UpdateAppMonitor",
+  UPDATE_RUM_METRIC_DEFINITION = "rum:UpdateRumMetricDefinition",
 }
 
 export enum CloudFront {
@@ -9294,6 +9302,7 @@ export enum ManagedStreamingforApacheKafka {
   UPDATE_CONNECTIVITY = "kafka:UpdateConnectivity",
   UPDATE_MONITORING = "kafka:UpdateMonitoring",
   UPDATE_SECURITY = "kafka:UpdateSecurity",
+  UPDATE_STORAGE = "kafka:UpdateStorage",
 }
 
 export enum CodeGuruReviewer {
@@ -10046,6 +10055,7 @@ export enum KeyManagementService {
 export enum SageMakerGroundTruthSynthetic {
   CREATE_PROJECT = "sagemaker-groundtruth-synthetic:CreateProject",
   DELETE_PROJECT = "sagemaker-groundtruth-synthetic:DeleteProject",
+  GET_ACCOUNT_DETAILS = "sagemaker-groundtruth-synthetic:GetAccountDetails",
   GET_BATCH = "sagemaker-groundtruth-synthetic:GetBatch",
   GET_PROJECT = "sagemaker-groundtruth-synthetic:GetProject",
   LIST_BATCH_DATA_TRANSFERS = "sagemaker-groundtruth-synthetic:ListBatchDataTransfers",
@@ -13357,9 +13367,9 @@ export enum CloudMap {
 export enum Tiros {
   CREATE_QUERY = "tiros:CreateQuery",
   EXTEND_QUERY = "tiros:ExtendQuery",
-  GET_EXTENSION_ACCOUNTS = "tiros:GetExtensionAccounts",
   GET_QUERY_ANSWER = "tiros:GetQueryAnswer",
   GET_QUERY_EXPLANATION = "tiros:GetQueryExplanation",
+  GET_QUERY_EXTENSION_ACCOUNTS = "tiros:GetQueryExtensionAccounts",
 }
 
 export enum ComputeOptimizer {
