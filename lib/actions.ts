@@ -1487,6 +1487,8 @@ export enum Proton {
   GET_ENVIRONMENT_TEMPLATE_VERSION = "proton:GetEnvironmentTemplateVersion",
   GET_REPOSITORY = "proton:GetRepository",
   GET_REPOSITORY_SYNC_STATUS = "proton:GetRepositorySyncStatus",
+  GET_RESOURCE_TEMPLATE_VERSION_STATUS_COUNTS = "proton:GetResourceTemplateVersionStatusCounts",
+  GET_RESOURCES_SUMMARY = "proton:GetResourcesSummary",
   GET_SERVICE = "proton:GetService",
   GET_SERVICE_INSTANCE = "proton:GetServiceInstance",
   GET_SERVICE_TEMPLATE = "proton:GetServiceTemplate",
@@ -2693,8 +2695,11 @@ export enum MarketplaceCatalog {
   DESCRIBE_TASK = "aws-marketplace:DescribeTask",
   LIST_CHANGE_SETS = "aws-marketplace:ListChangeSets",
   LIST_ENTITIES = "aws-marketplace:ListEntities",
+  LIST_TAGS_FOR_RESOURCE = "aws-marketplace:ListTagsForResource",
   LIST_TASKS = "aws-marketplace:ListTasks",
   START_CHANGE_SET = "aws-marketplace:StartChangeSet",
+  TAG_RESOURCE = "aws-marketplace:TagResource",
+  UNTAG_RESOURCE = "aws-marketplace:UntagResource",
   UPDATE_TASK = "aws-marketplace:UpdateTask",
 }
 
@@ -2933,6 +2938,11 @@ export enum Route53Domains {
   UPDATE_DOMAIN_NAMESERVERS = "route53domains:UpdateDomainNameservers",
   UPDATE_TAGS_FOR_DOMAIN = "route53domains:UpdateTagsForDomain",
   VIEW_BILLING = "route53domains:ViewBilling",
+}
+
+export enum Wickr {
+  CREATE_ADMIN_SESSION = "wickr:CreateAdminSession",
+  LIST_NETWORKS = "wickr:ListNetworks",
 }
 
 export enum OpsWorks {
@@ -4799,11 +4809,14 @@ export enum SystemsManagerIncidentManager {
 }
 
 export enum XRay {
+  BATCH_GET_TRACE_SUMMARY_BY_ID = "xray:BatchGetTraceSummaryById",
   BATCH_GET_TRACES = "xray:BatchGetTraces",
   CREATE_GROUP = "xray:CreateGroup",
   CREATE_SAMPLING_RULE = "xray:CreateSamplingRule",
   DELETE_GROUP = "xray:DeleteGroup",
+  DELETE_RESOURCE_POLICY = "xray:DeleteResourcePolicy",
   DELETE_SAMPLING_RULE = "xray:DeleteSamplingRule",
+  GET_DISTINCT_TRACE_GRAPHS = "xray:GetDistinctTraceGraphs",
   GET_ENCRYPTION_CONFIG = "xray:GetEncryptionConfig",
   GET_GROUP = "xray:GetGroup",
   GET_GROUPS = "xray:GetGroups",
@@ -4818,8 +4831,10 @@ export enum XRay {
   GET_TIME_SERIES_SERVICE_STATISTICS = "xray:GetTimeSeriesServiceStatistics",
   GET_TRACE_GRAPH = "xray:GetTraceGraph",
   GET_TRACE_SUMMARIES = "xray:GetTraceSummaries",
+  LIST_RESOURCE_POLICIES = "xray:ListResourcePolicies",
   LIST_TAGS_FOR_RESOURCE = "xray:ListTagsForResource",
   PUT_ENCRYPTION_CONFIG = "xray:PutEncryptionConfig",
+  PUT_RESOURCE_POLICY = "xray:PutResourcePolicy",
   PUT_TELEMETRY_RECORDS = "xray:PutTelemetryRecords",
   PUT_TRACE_SEGMENTS = "xray:PutTraceSegments",
   TAG_RESOURCE = "xray:TagResource",
@@ -5775,6 +5790,7 @@ export enum ElastiCache {
   BATCH_APPLY_UPDATE_ACTION = "elasticache:BatchApplyUpdateAction",
   BATCH_STOP_UPDATE_ACTION = "elasticache:BatchStopUpdateAction",
   COMPLETE_MIGRATION = "elasticache:CompleteMigration",
+  CONNECT = "elasticache:Connect",
   COPY_SNAPSHOT = "elasticache:CopySnapshot",
   CREATE_CACHE_CLUSTER = "elasticache:CreateCacheCluster",
   CREATE_CACHE_PARAMETER_GROUP = "elasticache:CreateCacheParameterGroup",
@@ -6910,7 +6926,9 @@ export enum LicenseManager {
   LIST_LICENSE_VERSIONS = "license-manager:ListLicenseVersions",
   LIST_LICENSES = "license-manager:ListLicenses",
   LIST_RECEIVED_GRANTS = "license-manager:ListReceivedGrants",
+  LIST_RECEIVED_GRANTS_FOR_ORGANIZATION = "license-manager:ListReceivedGrantsForOrganization",
   LIST_RECEIVED_LICENSES = "license-manager:ListReceivedLicenses",
+  LIST_RECEIVED_LICENSES_FOR_ORGANIZATION = "license-manager:ListReceivedLicensesForOrganization",
   LIST_RESOURCE_INVENTORY = "license-manager:ListResourceInventory",
   LIST_TAGS_FOR_RESOURCE = "license-manager:ListTagsForResource",
   LIST_TOKENS = "license-manager:ListTokens",
@@ -7419,6 +7437,7 @@ export enum WorkDocs {
   DELETE_COMMENT = "workdocs:DeleteComment",
   DELETE_CUSTOM_METADATA = "workdocs:DeleteCustomMetadata",
   DELETE_DOCUMENT = "workdocs:DeleteDocument",
+  DELETE_DOCUMENT_VERSION = "workdocs:DeleteDocumentVersion",
   DELETE_FOLDER = "workdocs:DeleteFolder",
   DELETE_FOLDER_CONTENTS = "workdocs:DeleteFolderContents",
   DELETE_INSTANCE = "workdocs:DeleteInstance",
@@ -7452,6 +7471,7 @@ export enum WorkDocs {
   REGISTER_DIRECTORY = "workdocs:RegisterDirectory",
   REMOVE_ALL_RESOURCE_PERMISSIONS = "workdocs:RemoveAllResourcePermissions",
   REMOVE_RESOURCE_PERMISSION = "workdocs:RemoveResourcePermission",
+  RESTORE_DOCUMENT_VERSIONS = "workdocs:RestoreDocumentVersions",
   UPDATE_DOCUMENT = "workdocs:UpdateDocument",
   UPDATE_DOCUMENT_VERSION = "workdocs:UpdateDocumentVersion",
   UPDATE_FOLDER = "workdocs:UpdateFolder",
@@ -9625,8 +9645,10 @@ export enum IoTTwinMaker {
   DELETE_ENTITY = "iottwinmaker:DeleteEntity",
   DELETE_SCENE = "iottwinmaker:DeleteScene",
   DELETE_WORKSPACE = "iottwinmaker:DeleteWorkspace",
+  EXECUTE_QUERY = "iottwinmaker:ExecuteQuery",
   GET_COMPONENT_TYPE = "iottwinmaker:GetComponentType",
   GET_ENTITY = "iottwinmaker:GetEntity",
+  GET_PRICING_PLAN = "iottwinmaker:GetPricingPlan",
   GET_PROPERTY_VALUE = "iottwinmaker:GetPropertyValue",
   GET_PROPERTY_VALUE_HISTORY = "iottwinmaker:GetPropertyValueHistory",
   GET_SCENE = "iottwinmaker:GetScene",
@@ -9640,6 +9662,7 @@ export enum IoTTwinMaker {
   UNTAG_RESOURCE = "iottwinmaker:UntagResource",
   UPDATE_COMPONENT_TYPE = "iottwinmaker:UpdateComponentType",
   UPDATE_ENTITY = "iottwinmaker:UpdateEntity",
+  UPDATE_PRICING_PLAN = "iottwinmaker:UpdatePricingPlan",
   UPDATE_SCENE = "iottwinmaker:UpdateScene",
   UPDATE_WORKSPACE = "iottwinmaker:UpdateWorkspace",
 }
@@ -10125,6 +10148,7 @@ export enum CodeGuru {
 }
 
 export enum EC2 {
+  ACCEPT_ADDRESS_TRANSFER = "ec2:AcceptAddressTransfer",
   ACCEPT_RESERVED_INSTANCES_EXCHANGE_QUOTE = "ec2:AcceptReservedInstancesExchangeQuote",
   ACCEPT_TRANSIT_GATEWAY_MULTICAST_DOMAIN_ASSOCIATIONS = "ec2:AcceptTransitGatewayMulticastDomainAssociations",
   ACCEPT_TRANSIT_GATEWAY_PEERING_ATTACHMENT = "ec2:AcceptTransitGatewayPeeringAttachment",
@@ -10165,6 +10189,7 @@ export enum EC2 {
   CANCEL_CAPACITY_RESERVATION_FLEETS = "ec2:CancelCapacityReservationFleets",
   CANCEL_CONVERSION_TASK = "ec2:CancelConversionTask",
   CANCEL_EXPORT_TASK = "ec2:CancelExportTask",
+  CANCEL_IMAGE_LAUNCH_PERMISSION = "ec2:CancelImageLaunchPermission",
   CANCEL_IMPORT_TASK = "ec2:CancelImportTask",
   CANCEL_RESERVED_INSTANCES_LISTING = "ec2:CancelReservedInstancesListing",
   CANCEL_SPOT_FLEET_REQUESTS = "ec2:CancelSpotFleetRequests",
@@ -10330,6 +10355,7 @@ export enum EC2 {
   DEREGISTER_TRANSIT_GATEWAY_MULTICAST_GROUP_MEMBERS = "ec2:DeregisterTransitGatewayMulticastGroupMembers",
   DEREGISTER_TRANSIT_GATEWAY_MULTICAST_GROUP_SOURCES = "ec2:DeregisterTransitGatewayMulticastGroupSources",
   DESCRIBE_ACCOUNT_ATTRIBUTES = "ec2:DescribeAccountAttributes",
+  DESCRIBE_ADDRESS_TRANSFERS = "ec2:DescribeAddressTransfers",
   DESCRIBE_ADDRESSES = "ec2:DescribeAddresses",
   DESCRIBE_ADDRESSES_ATTRIBUTE = "ec2:DescribeAddressesAttribute",
   DESCRIBE_AGGREGATE_ID_FORMAT = "ec2:DescribeAggregateIdFormat",
@@ -10470,6 +10496,7 @@ export enum EC2 {
   DETACH_NETWORK_INTERFACE = "ec2:DetachNetworkInterface",
   DETACH_VOLUME = "ec2:DetachVolume",
   DETACH_VPN_GATEWAY = "ec2:DetachVpnGateway",
+  DISABLE_ADDRESS_TRANSFER = "ec2:DisableAddressTransfer",
   DISABLE_EBS_ENCRYPTION_BY_DEFAULT = "ec2:DisableEbsEncryptionByDefault",
   DISABLE_FAST_LAUNCH = "ec2:DisableFastLaunch",
   DISABLE_FAST_SNAPSHOT_RESTORES = "ec2:DisableFastSnapshotRestores",
@@ -10492,6 +10519,7 @@ export enum EC2 {
   DISASSOCIATE_TRANSIT_GATEWAY_ROUTE_TABLE = "ec2:DisassociateTransitGatewayRouteTable",
   DISASSOCIATE_TRUNK_INTERFACE = "ec2:DisassociateTrunkInterface",
   DISASSOCIATE_VPC_CIDR_BLOCK = "ec2:DisassociateVpcCidrBlock",
+  ENABLE_ADDRESS_TRANSFER = "ec2:EnableAddressTransfer",
   ENABLE_EBS_ENCRYPTION_BY_DEFAULT = "ec2:EnableEbsEncryptionByDefault",
   ENABLE_FAST_LAUNCH = "ec2:EnableFastLaunch",
   ENABLE_FAST_SNAPSHOT_RESTORES = "ec2:EnableFastSnapshotRestores",
@@ -11320,16 +11348,21 @@ export enum EC2InstanceConnect {
 
 export enum InteractiveVideoServiceChat {
   CREATE_CHAT_TOKEN = "ivschat:CreateChatToken",
+  CREATE_LOGGING_CONFIGURATION = "ivschat:CreateLoggingConfiguration",
   CREATE_ROOM = "ivschat:CreateRoom",
+  DELETE_LOGGING_CONFIGURATION = "ivschat:DeleteLoggingConfiguration",
   DELETE_MESSAGE = "ivschat:DeleteMessage",
   DELETE_ROOM = "ivschat:DeleteRoom",
   DISCONNECT_USER = "ivschat:DisconnectUser",
+  GET_LOGGING_CONFIGURATION = "ivschat:GetLoggingConfiguration",
   GET_ROOM = "ivschat:GetRoom",
+  LIST_LOGGING_CONFIGURATIONS = "ivschat:ListLoggingConfigurations",
   LIST_ROOMS = "ivschat:ListRooms",
   LIST_TAGS_FOR_RESOURCE = "ivschat:ListTagsForResource",
   SEND_EVENT = "ivschat:SendEvent",
   TAG_RESOURCE = "ivschat:TagResource",
   UNTAG_RESOURCE = "ivschat:UntagResource",
+  UPDATE_LOGGING_CONFIGURATION = "ivschat:UpdateLoggingConfiguration",
   UPDATE_ROOM = "ivschat:UpdateRoom",
 }
 
@@ -12203,6 +12236,7 @@ export enum CloudWatchLogs {
   GET_LOG_RECORD = "logs:GetLogRecord",
   GET_QUERY_RESULTS = "logs:GetQueryResults",
   LIST_LOG_DELIVERIES = "logs:ListLogDeliveries",
+  LIST_TAGS_FOR_RESOURCE = "logs:ListTagsForResource",
   LIST_TAGS_LOG_GROUP = "logs:ListTagsLogGroup",
   PUT_DESTINATION = "logs:PutDestination",
   PUT_DESTINATION_POLICY = "logs:PutDestinationPolicy",
@@ -12215,8 +12249,10 @@ export enum CloudWatchLogs {
   START_QUERY = "logs:StartQuery",
   STOP_QUERY = "logs:StopQuery",
   TAG_LOG_GROUP = "logs:TagLogGroup",
+  TAG_RESOURCE = "logs:TagResource",
   TEST_METRIC_FILTER = "logs:TestMetricFilter",
   UNTAG_LOG_GROUP = "logs:UntagLogGroup",
+  UNTAG_RESOURCE = "logs:UntagResource",
   UPDATE_LOG_DELIVERY = "logs:UpdateLogDelivery",
 }
 
@@ -12347,6 +12383,7 @@ export enum ServiceCatalog {
   GET_APPLICATION = "servicecatalog:GetApplication",
   GET_ASSOCIATED_RESOURCE = "servicecatalog:GetAssociatedResource",
   GET_ATTRIBUTE_GROUP = "servicecatalog:GetAttributeGroup",
+  GET_CONFIGURATION = "servicecatalog:GetConfiguration",
   GET_PROVISIONED_PRODUCT_OUTPUTS = "servicecatalog:GetProvisionedProductOutputs",
   IMPORT_AS_PROVISIONED_PRODUCT = "servicecatalog:ImportAsProvisionedProduct",
   LIST_ACCEPTED_PORTFOLIO_SHARES = "servicecatalog:ListAcceptedPortfolioShares",
@@ -12374,6 +12411,7 @@ export enum ServiceCatalog {
   LIST_TAG_OPTIONS = "servicecatalog:ListTagOptions",
   LIST_TAGS_FOR_RESOURCE = "servicecatalog:ListTagsForResource",
   PROVISION_PRODUCT = "servicecatalog:ProvisionProduct",
+  PUT_CONFIGURATION = "servicecatalog:PutConfiguration",
   REJECT_PORTFOLIO_SHARE = "servicecatalog:RejectPortfolioShare",
   SCAN_PROVISIONED_PRODUCTS = "servicecatalog:ScanProvisionedProducts",
   SEARCH_PRODUCTS = "servicecatalog:SearchProducts",
@@ -12601,6 +12639,10 @@ export enum ManagedWorkflowsforApacheAirflow {
 
 export enum TaxSettings {
   GET_EXEMPTIONS = "tax:GetExemptions",
+  GET_TAX_INTERVIEW = "tax:GetTaxInterview",
+  GET_TAX_REGISTRATION = "tax:GetTaxRegistration",
+  PUT_TAX_INTERVIEW = "tax:PutTaxInterview",
+  PUT_TAX_REGISTRATION = "tax:PutTaxRegistration",
   UPDATE_EXEMPTIONS = "tax:UpdateExemptions",
 }
 
@@ -12776,9 +12818,10 @@ export enum Detective {
   GET_USAGE_INFORMATION = "detective:GetUsageInformation",
   LIST_DATASOURCE_PACKAGES = "detective:ListDatasourcePackages",
   LIST_GRAPHS = "detective:ListGraphs",
+  LIST_HIGH_DEGREE_ENTITIES = "detective:ListHighDegreeEntities",
   LIST_INVITATIONS = "detective:ListInvitations",
   LIST_MEMBERS = "detective:ListMembers",
-  LIST_ORGANIZATION_ADMIN_ACCOUNTS = "detective:ListOrganizationAdminAccounts",
+  LIST_ORGANIZATION_ADMIN_ACCOUNT = "detective:ListOrganizationAdminAccount",
   LIST_TAGS_FOR_RESOURCE = "detective:ListTagsForResource",
   REJECT_INVITATION = "detective:RejectInvitation",
   SEARCH_GRAPH = "detective:SearchGraph",
@@ -13553,6 +13596,29 @@ export enum LaunchWizard {
   GET_RESOURCE_COST_ESTIMATE = "launchwizard:GetResourceCostEstimate",
   LIST_PROVISIONED_APPS = "launchwizard:ListProvisionedApps",
   START_PROVISIONING = "launchwizard:StartProvisioning",
+}
+
+export enum SystemsManagerforSAP {
+  BACKUP_DATABASE = "ssm-sap:BackupDatabase",
+  DELETE_RESOURCE_PERMISSION = "ssm-sap:DeleteResourcePermission",
+  DEREGISTER_APPLICATION = "ssm-sap:DeregisterApplication",
+  GET_APPLICATION = "ssm-sap:GetApplication",
+  GET_COMPONENT = "ssm-sap:GetComponent",
+  GET_DATABASE = "ssm-sap:GetDatabase",
+  GET_OPERATION = "ssm-sap:GetOperation",
+  GET_RESOURCE_PERMISSION = "ssm-sap:GetResourcePermission",
+  LIST_APPLICATIONS = "ssm-sap:ListApplications",
+  LIST_COMPONENTS = "ssm-sap:ListComponents",
+  LIST_DATABASES = "ssm-sap:ListDatabases",
+  LIST_OPERATIONS = "ssm-sap:ListOperations",
+  LIST_TAGS_FOR_RESOURCE = "ssm-sap:ListTagsForResource",
+  PUT_RESOURCE_PERMISSION = "ssm-sap:PutResourcePermission",
+  REGISTER_APPLICATION = "ssm-sap:RegisterApplication",
+  RESTORE_DATABASE = "ssm-sap:RestoreDatabase",
+  TAG_RESOURCE = "ssm-sap:TagResource",
+  UNTAG_RESOURCE = "ssm-sap:UntagResource",
+  UPDATE_APPLICATION_SETTINGS = "ssm-sap:UpdateApplicationSettings",
+  UPDATE_H_A_N_A_BACKUP_SETTINGS = "ssm-sap:UpdateHANABackupSettings",
 }
 
 export enum ElementalMediaConvert {
