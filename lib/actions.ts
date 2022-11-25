@@ -2940,11 +2940,6 @@ export enum Route53Domains {
   VIEW_BILLING = "route53domains:ViewBilling",
 }
 
-export enum Wickr {
-  CREATE_ADMIN_SESSION = "wickr:CreateAdminSession",
-  LIST_NETWORKS = "wickr:ListNetworks",
-}
-
 export enum OpsWorks {
   ASSIGN_INSTANCE = "opsworks:AssignInstance",
   ASSIGN_VOLUME = "opsworks:AssignVolume",
@@ -3631,6 +3626,7 @@ export enum Connect {
   DESCRIBE_CONTACT = "connect:DescribeContact",
   DESCRIBE_CONTACT_FLOW = "connect:DescribeContactFlow",
   DESCRIBE_CONTACT_FLOW_MODULE = "connect:DescribeContactFlowModule",
+  DESCRIBE_FORECASTING_PLANNING_SCHEDULING_INTEGRATION = "connect:DescribeForecastingPlanningSchedulingIntegration",
   DESCRIBE_HOURS_OF_OPERATION = "connect:DescribeHoursOfOperation",
   DESCRIBE_INSTANCE = "connect:DescribeInstance",
   DESCRIBE_INSTANCE_ATTRIBUTE = "connect:DescribeInstanceAttribute",
@@ -3655,6 +3651,7 @@ export enum Connect {
   DISASSOCIATE_QUEUE_QUICK_CONNECTS = "connect:DisassociateQueueQuickConnects",
   DISASSOCIATE_ROUTING_PROFILE_QUEUES = "connect:DisassociateRoutingProfileQueues",
   DISASSOCIATE_SECURITY_KEY = "connect:DisassociateSecurityKey",
+  DISMISS_USER_CONTACT = "connect:DismissUserContact",
   GET_CONTACT_ATTRIBUTES = "connect:GetContactAttributes",
   GET_CURRENT_METRIC_DATA = "connect:GetCurrentMetricData",
   GET_CURRENT_USER_DATA = "connect:GetCurrentUserData",
@@ -3695,6 +3692,7 @@ export enum Connect {
   LIST_USE_CASES = "connect:ListUseCases",
   LIST_USER_HIERARCHY_GROUPS = "connect:ListUserHierarchyGroups",
   LIST_USERS = "connect:ListUsers",
+  MONITOR_CONTACT = "connect:MonitorContact",
   PUT_USER_STATUS = "connect:PutUserStatus",
   RELEASE_PHONE_NUMBER = "connect:ReleasePhoneNumber",
   REPLICATE_INSTANCE = "connect:ReplicateInstance",
@@ -3708,11 +3706,13 @@ export enum Connect {
   START_CHAT_CONTACT = "connect:StartChatContact",
   START_CONTACT_RECORDING = "connect:StartContactRecording",
   START_CONTACT_STREAMING = "connect:StartContactStreaming",
+  START_FORECASTING_PLANNING_SCHEDULING_INTEGRATION = "connect:StartForecastingPlanningSchedulingIntegration",
   START_OUTBOUND_VOICE_CONTACT = "connect:StartOutboundVoiceContact",
   START_TASK_CONTACT = "connect:StartTaskContact",
   STOP_CONTACT = "connect:StopContact",
   STOP_CONTACT_RECORDING = "connect:StopContactRecording",
   STOP_CONTACT_STREAMING = "connect:StopContactStreaming",
+  STOP_FORECASTING_PLANNING_SCHEDULING_INTEGRATION = "connect:StopForecastingPlanningSchedulingIntegration",
   SUSPEND_CONTACT_RECORDING = "connect:SuspendContactRecording",
   TAG_RESOURCE = "connect:TagResource",
   TRANSFER_CONTACT = "connect:TransferContact",
@@ -4378,6 +4378,7 @@ export enum AppFlow {
   UN_REGISTER_CONNECTOR = "appflow:UnRegisterConnector",
   UNTAG_RESOURCE = "appflow:UntagResource",
   UPDATE_CONNECTOR_PROFILE = "appflow:UpdateConnectorProfile",
+  UPDATE_CONNECTOR_REGISTRATION = "appflow:UpdateConnectorRegistration",
   UPDATE_FLOW = "appflow:UpdateFlow",
   USE_CONNECTOR_PROFILE = "appflow:UseConnectorProfile",
 }
@@ -7742,6 +7743,7 @@ export enum QuickSight {
   CREATE_USER = "quicksight:CreateUser",
   CREATE_V_P_C_CONNECTION = "quicksight:CreateVPCConnection",
   DELETE_ACCOUNT_CUSTOMIZATION = "quicksight:DeleteAccountCustomization",
+  DELETE_ACCOUNT_SUBSCRIPTION = "quicksight:DeleteAccountSubscription",
   DELETE_ANALYSIS = "quicksight:DeleteAnalysis",
   DELETE_CUSTOM_PERMISSIONS = "quicksight:DeleteCustomPermissions",
   DELETE_DASHBOARD = "quicksight:DeleteDashboard",
@@ -7827,6 +7829,8 @@ export enum QuickSight {
   SCOPE_DOWN_POLICY = "quicksight:ScopeDownPolicy",
   SEARCH_ANALYSES = "quicksight:SearchAnalyses",
   SEARCH_DASHBOARDS = "quicksight:SearchDashboards",
+  SEARCH_DATA_SETS = "quicksight:SearchDataSets",
+  SEARCH_DATA_SOURCES = "quicksight:SearchDataSources",
   SEARCH_DIRECTORY_GROUPS = "quicksight:SearchDirectoryGroups",
   SEARCH_FOLDERS = "quicksight:SearchFolders",
   SEARCH_GROUPS = "quicksight:SearchGroups",
@@ -10892,7 +10896,9 @@ export enum RecycleBin {
   GET_RULE = "rbin:GetRule",
   LIST_RULES = "rbin:ListRules",
   LIST_TAGS_FOR_RESOURCE = "rbin:ListTagsForResource",
+  LOCK_RULE = "rbin:LockRule",
   TAG_RESOURCE = "rbin:TagResource",
+  UNLOCK_RULE = "rbin:UnlockRule",
   UNTAG_RESOURCE = "rbin:UntagResource",
   UPDATE_RULE = "rbin:UpdateRule",
 }
