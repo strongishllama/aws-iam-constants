@@ -1,23 +1,18 @@
-import * as axios from "axios";
+import fetch from "node-fetch";
 import { execSync } from "child_process";
 import * as fs from "fs";
 
-// Fetch the list of IAM actions.
-axios.default
-  .get("https://awspolicygen.s3.amazonaws.com/js/policies.js")
-  .then((response) => {
-    generate(response.data);
-  })
-  .catch((error) => {
-    console.error(`Error: ${error}`);
-  });
+generate();
 
 /**
- * Generate will generate the actions.ts file from the responseData parameter.
- * The actions.ts contains all IAM actions as enums.
- * @param responseBody
+ * Generate will generate the actions.ts file. The actions.ts contains all IAM actions as enums.
  */
-function generate(responseBody: any): void {
+async function generate(): Promise<void> {
+  const response = await fetch(
+    "https://awspolicygen.s3.amazonaws.com/js/policies.js"
+  );
+  const responseBody = await response.text();
+
   // Make sure the response body is string.
   if (typeof responseBody !== "string") {
     console.error(`Error: unexpected data type: ${typeof responseBody}`);
