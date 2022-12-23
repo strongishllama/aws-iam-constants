@@ -590,6 +590,7 @@ export enum IAMIdentityCentersuccessortoSingleSignOn {
   LIST_PROFILES = "sso:ListProfiles",
   LIST_TAGS_FOR_RESOURCE = "sso:ListTagsForResource",
   PROVISION_PERMISSION_SET = "sso:ProvisionPermissionSet",
+  PUT_APPLICATION_ASSIGNMENT_CONFIGURATION = "sso:PutApplicationAssignmentConfiguration",
   PUT_INLINE_POLICY_TO_PERMISSION_SET = "sso:PutInlinePolicyToPermissionSet",
   PUT_MFA_DEVICE_MANAGEMENT_FOR_DIRECTORY = "sso:PutMfaDeviceManagementForDirectory",
   PUT_PERMISSIONS_BOUNDARY_TO_PERMISSION_SET = "sso:PutPermissionsBoundaryToPermissionSet",
@@ -3005,6 +3006,20 @@ export enum AutoScaling {
   UPDATE_SCALING_PLAN = "autoscaling-plans:UpdateScalingPlan",
 }
 
+export enum CodeCatalyst {
+  ACCEPT_CONNECTION = "codecatalyst:AcceptConnection",
+  ASSOCIATE_IAM_ROLE_TO_CONNECTION = "codecatalyst:AssociateIamRoleToConnection",
+  DELETE_CONNECTION = "codecatalyst:DeleteConnection",
+  DISASSOCIATE_IAM_ROLE_FROM_CONNECTION = "codecatalyst:DisassociateIamRoleFromConnection",
+  GET_BILLING_AUTHORIZATION = "codecatalyst:GetBillingAuthorization",
+  GET_CONNECTION = "codecatalyst:GetConnection",
+  GET_PENDING_CONNECTION = "codecatalyst:GetPendingConnection",
+  LIST_CONNECTIONS = "codecatalyst:ListConnections",
+  LIST_IAM_ROLES_FOR_CONNECTION = "codecatalyst:ListIamRolesForConnection",
+  PUT_BILLING_AUTHORIZATION = "codecatalyst:PutBillingAuthorization",
+  REJECT_CONNECTION = "codecatalyst:RejectConnection",
+}
+
 export enum CostandUsageReport {
   DELETE_REPORT_DEFINITION = "cur:DeleteReportDefinition",
   DESCRIBE_REPORT_DEFINITIONS = "cur:DescribeReportDefinitions",
@@ -3044,6 +3059,7 @@ export enum ElementalSupportCases {
 
 export enum Route53Domains {
   ACCEPT_DOMAIN_TRANSFER_FROM_ANOTHER_AWS_ACCOUNT = "route53domains:AcceptDomainTransferFromAnotherAwsAccount",
+  ASSOCIATE_DELEGATION_SIGNER_TO_DOMAIN = "route53domains:AssociateDelegationSignerToDomain",
   CANCEL_DOMAIN_TRANSFER_TO_ANOTHER_AWS_ACCOUNT = "route53domains:CancelDomainTransferToAnotherAwsAccount",
   CHECK_DOMAIN_AVAILABILITY = "route53domains:CheckDomainAvailability",
   CHECK_DOMAIN_TRANSFERABILITY = "route53domains:CheckDomainTransferability",
@@ -3051,6 +3067,7 @@ export enum Route53Domains {
   DELETE_TAGS_FOR_DOMAIN = "route53domains:DeleteTagsForDomain",
   DISABLE_DOMAIN_AUTO_RENEW = "route53domains:DisableDomainAutoRenew",
   DISABLE_DOMAIN_TRANSFER_LOCK = "route53domains:DisableDomainTransferLock",
+  DISASSOCIATE_DELEGATION_SIGNER_FROM_DOMAIN = "route53domains:DisassociateDelegationSignerFromDomain",
   ENABLE_DOMAIN_AUTO_RENEW = "route53domains:EnableDomainAutoRenew",
   ENABLE_DOMAIN_TRANSFER_LOCK = "route53domains:EnableDomainTransferLock",
   GET_CONTACT_REACHABILITY_STATUS = "route53domains:GetContactReachabilityStatus",
@@ -3061,10 +3078,12 @@ export enum Route53Domains {
   LIST_OPERATIONS = "route53domains:ListOperations",
   LIST_PRICES = "route53domains:ListPrices",
   LIST_TAGS_FOR_DOMAIN = "route53domains:ListTagsForDomain",
+  PUSH_DOMAIN = "route53domains:PushDomain",
   REGISTER_DOMAIN = "route53domains:RegisterDomain",
   REJECT_DOMAIN_TRANSFER_FROM_ANOTHER_AWS_ACCOUNT = "route53domains:RejectDomainTransferFromAnotherAwsAccount",
   RENEW_DOMAIN = "route53domains:RenewDomain",
   RESEND_CONTACT_REACHABILITY_EMAIL = "route53domains:ResendContactReachabilityEmail",
+  RESEND_OPERATION_AUTHORIZATION = "route53domains:ResendOperationAuthorization",
   RETRIEVE_DOMAIN_AUTH_CODE = "route53domains:RetrieveDomainAuthCode",
   TRANSFER_DOMAIN = "route53domains:TransferDomain",
   TRANSFER_DOMAIN_TO_ANOTHER_AWS_ACCOUNT = "route53domains:TransferDomainToAnotherAwsAccount",
@@ -3742,6 +3761,7 @@ export enum Connect {
   CREATE_QUEUE = "connect:CreateQueue",
   CREATE_QUICK_CONNECT = "connect:CreateQuickConnect",
   CREATE_ROUTING_PROFILE = "connect:CreateRoutingProfile",
+  CREATE_RULE = "connect:CreateRule",
   CREATE_SECURITY_PROFILE = "connect:CreateSecurityProfile",
   CREATE_TASK_TEMPLATE = "connect:CreateTaskTemplate",
   CREATE_TRAFFIC_DISTRIBUTION_GROUP = "connect:CreateTrafficDistributionGroup",
@@ -3755,6 +3775,7 @@ export enum Connect {
   DELETE_INSTANCE = "connect:DeleteInstance",
   DELETE_INTEGRATION_ASSOCIATION = "connect:DeleteIntegrationAssociation",
   DELETE_QUICK_CONNECT = "connect:DeleteQuickConnect",
+  DELETE_RULE = "connect:DeleteRule",
   DELETE_SECURITY_PROFILE = "connect:DeleteSecurityProfile",
   DELETE_TASK_TEMPLATE = "connect:DeleteTaskTemplate",
   DELETE_TRAFFIC_DISTRIBUTION_GROUP = "connect:DeleteTrafficDistributionGroup",
@@ -3775,6 +3796,7 @@ export enum Connect {
   DESCRIBE_QUEUE = "connect:DescribeQueue",
   DESCRIBE_QUICK_CONNECT = "connect:DescribeQuickConnect",
   DESCRIBE_ROUTING_PROFILE = "connect:DescribeRoutingProfile",
+  DESCRIBE_RULE = "connect:DescribeRule",
   DESCRIBE_SECURITY_PROFILE = "connect:DescribeSecurityProfile",
   DESCRIBE_TRAFFIC_DISTRIBUTION_GROUP = "connect:DescribeTrafficDistributionGroup",
   DESCRIBE_USER = "connect:DescribeUser",
@@ -3823,6 +3845,7 @@ export enum Connect {
   LIST_REALTIME_CONTACT_ANALYSIS_SEGMENTS = "connect:ListRealtimeContactAnalysisSegments",
   LIST_ROUTING_PROFILE_QUEUES = "connect:ListRoutingProfileQueues",
   LIST_ROUTING_PROFILES = "connect:ListRoutingProfiles",
+  LIST_RULE = "connect:ListRule",
   LIST_SECURITY_KEYS = "connect:ListSecurityKeys",
   LIST_SECURITY_PROFILE_PERMISSIONS = "connect:ListSecurityProfilePermissions",
   LIST_SECURITY_PROFILES = "connect:ListSecurityProfiles",
@@ -3881,6 +3904,7 @@ export enum Connect {
   UPDATE_ROUTING_PROFILE_DEFAULT_OUTBOUND_QUEUE = "connect:UpdateRoutingProfileDefaultOutboundQueue",
   UPDATE_ROUTING_PROFILE_NAME = "connect:UpdateRoutingProfileName",
   UPDATE_ROUTING_PROFILE_QUEUES = "connect:UpdateRoutingProfileQueues",
+  UPDATE_RULE = "connect:UpdateRule",
   UPDATE_SECURITY_PROFILE = "connect:UpdateSecurityProfile",
   UPDATE_TASK_TEMPLATE = "connect:UpdateTaskTemplate",
   UPDATE_TRAFFIC_DISTRIBUTION = "connect:UpdateTrafficDistribution",
@@ -13120,6 +13144,7 @@ export enum NimbleStudio {
   GET_LAUNCH_PROFILE_MEMBER = "nimble:GetLaunchProfileMember",
   GET_STREAMING_IMAGE = "nimble:GetStreamingImage",
   GET_STREAMING_SESSION = "nimble:GetStreamingSession",
+  GET_STREAMING_SESSION_BACKUP = "nimble:GetStreamingSessionBackup",
   GET_STREAMING_SESSION_STREAM = "nimble:GetStreamingSessionStream",
   GET_STUDIO = "nimble:GetStudio",
   GET_STUDIO_COMPONENT = "nimble:GetStudioComponent",
@@ -13129,6 +13154,7 @@ export enum NimbleStudio {
   LIST_LAUNCH_PROFILE_MEMBERS = "nimble:ListLaunchProfileMembers",
   LIST_LAUNCH_PROFILES = "nimble:ListLaunchProfiles",
   LIST_STREAMING_IMAGES = "nimble:ListStreamingImages",
+  LIST_STREAMING_SESSION_BACKUPS = "nimble:ListStreamingSessionBackups",
   LIST_STREAMING_SESSIONS = "nimble:ListStreamingSessions",
   LIST_STUDIO_COMPONENTS = "nimble:ListStudioComponents",
   LIST_STUDIO_MEMBERS = "nimble:ListStudioMembers",
@@ -14068,11 +14094,14 @@ export enum ComputeOptimizer {
   EXPORT_AUTO_SCALING_GROUP_RECOMMENDATIONS = "compute-optimizer:ExportAutoScalingGroupRecommendations",
   EXPORT_E_B_S_VOLUME_RECOMMENDATIONS = "compute-optimizer:ExportEBSVolumeRecommendations",
   EXPORT_E_C2_INSTANCE_RECOMMENDATIONS = "compute-optimizer:ExportEC2InstanceRecommendations",
+  EXPORT_E_C_S_SERVICE_RECOMMENDATIONS = "compute-optimizer:ExportECSServiceRecommendations",
   EXPORT_LAMBDA_FUNCTION_RECOMMENDATIONS = "compute-optimizer:ExportLambdaFunctionRecommendations",
   GET_AUTO_SCALING_GROUP_RECOMMENDATIONS = "compute-optimizer:GetAutoScalingGroupRecommendations",
   GET_E_B_S_VOLUME_RECOMMENDATIONS = "compute-optimizer:GetEBSVolumeRecommendations",
   GET_E_C2_INSTANCE_RECOMMENDATIONS = "compute-optimizer:GetEC2InstanceRecommendations",
   GET_E_C2_RECOMMENDATION_PROJECTED_METRICS = "compute-optimizer:GetEC2RecommendationProjectedMetrics",
+  GET_E_C_S_SERVICE_RECOMMENDATION_PROJECTED_METRICS = "compute-optimizer:GetECSServiceRecommendationProjectedMetrics",
+  GET_E_C_S_SERVICE_RECOMMENDATIONS = "compute-optimizer:GetECSServiceRecommendations",
   GET_EFFECTIVE_RECOMMENDATION_PREFERENCES = "compute-optimizer:GetEffectiveRecommendationPreferences",
   GET_ENROLLMENT_STATUS = "compute-optimizer:GetEnrollmentStatus",
   GET_ENROLLMENT_STATUSES_FOR_ORGANIZATION = "compute-optimizer:GetEnrollmentStatusesForOrganization",
@@ -14183,6 +14212,13 @@ export enum Rekognition {
   UNTAG_RESOURCE = "rekognition:UntagResource",
   UPDATE_DATASET_ENTRIES = "rekognition:UpdateDatasetEntries",
   UPDATE_STREAM_PROCESSOR = "rekognition:UpdateStreamProcessor",
+}
+
+export enum LicenseManagerLinuxSubscriptionsManager {
+  GET_SERVICE_SETTINGS = "license-manager-linux-subscriptions:GetServiceSettings",
+  LIST_LINUX_SUBSCRIPTION_INSTANCES = "license-manager-linux-subscriptions:ListLinuxSubscriptionInstances",
+  LIST_LINUX_SUBSCRIPTIONS = "license-manager-linux-subscriptions:ListLinuxSubscriptions",
+  UPDATE_SERVICE_SETTINGS = "license-manager-linux-subscriptions:UpdateServiceSettings",
 }
 
 export enum LaunchWizard {
