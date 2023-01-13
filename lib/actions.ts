@@ -1016,6 +1016,12 @@ export enum Lambda {
   UPDATE_FUNCTION_URL_CONFIG = "lambda:UpdateFunctionUrlConfig",
 }
 
+export enum FreeTier {
+  GET_FREE_TIER_ALERT_PREFERENCE = "freetier:GetFreeTierAlertPreference",
+  GET_FREE_TIER_USAGE = "freetier:GetFreeTierUsage",
+  PUT_FREE_TIER_ALERT_PREFERENCE = "freetier:PutFreeTierAlertPreference",
+}
+
 export enum ApplicationMigrationService {
   ARCHIVE_APPLICATION = "mgn:ArchiveApplication",
   ARCHIVE_WAVE = "mgn:ArchiveWave",
@@ -3025,8 +3031,13 @@ export enum CodeCatalyst {
 export enum CostandUsageReport {
   DELETE_REPORT_DEFINITION = "cur:DeleteReportDefinition",
   DESCRIBE_REPORT_DEFINITIONS = "cur:DescribeReportDefinitions",
+  GET_CLASSIC_REPORT = "cur:GetClassicReport",
+  GET_CLASSIC_REPORT_PREFERENCES = "cur:GetClassicReportPreferences",
+  GET_USAGE_REPORT = "cur:GetUsageReport",
   MODIFY_REPORT_DEFINITION = "cur:ModifyReportDefinition",
+  PUT_CLASSIC_REPORT_PREFERENCES = "cur:PutClassicReportPreferences",
   PUT_REPORT_DEFINITION = "cur:PutReportDefinition",
+  VALIDATE_REPORT_DESTINATION = "cur:ValidateReportDestination",
 }
 
 export enum IdentityStore {
@@ -3249,7 +3260,7 @@ export enum CodeDeploy {
   UPDATE_DEPLOYMENT_GROUP = "codedeploy:UpdateDeploymentGroup",
 }
 
-export enum IdentityAndAccessManagement {
+export enum IdentityandAccessManagement {
   ADD_CLIENT_I_D_TO_OPEN_I_D_CONNECT_PROVIDER = "iam:AddClientIDToOpenIDConnectProvider",
   ADD_ROLE_TO_INSTANCE_PROFILE = "iam:AddRoleToInstanceProfile",
   ADD_USER_TO_GROUP = "iam:AddUserToGroup",
@@ -3275,6 +3286,7 @@ export enum IdentityAndAccessManagement {
   DELETE_ACCESS_KEY = "iam:DeleteAccessKey",
   DELETE_ACCOUNT_ALIAS = "iam:DeleteAccountAlias",
   DELETE_ACCOUNT_PASSWORD_POLICY = "iam:DeleteAccountPasswordPolicy",
+  DELETE_CLOUD_FRONT_PUBLIC_KEY = "iam:DeleteCloudFrontPublicKey",
   DELETE_GROUP = "iam:DeleteGroup",
   DELETE_GROUP_POLICY = "iam:DeleteGroupPolicy",
   DELETE_INSTANCE_PROFILE = "iam:DeleteInstanceProfile",
@@ -3304,8 +3316,11 @@ export enum IdentityAndAccessManagement {
   GENERATE_SERVICE_LAST_ACCESSED_DETAILS = "iam:GenerateServiceLastAccessedDetails",
   GET_ACCESS_KEY_LAST_USED = "iam:GetAccessKeyLastUsed",
   GET_ACCOUNT_AUTHORIZATION_DETAILS = "iam:GetAccountAuthorizationDetails",
+  GET_ACCOUNT_EMAIL_ADDRESS = "iam:GetAccountEmailAddress",
+  GET_ACCOUNT_NAME = "iam:GetAccountName",
   GET_ACCOUNT_PASSWORD_POLICY = "iam:GetAccountPasswordPolicy",
   GET_ACCOUNT_SUMMARY = "iam:GetAccountSummary",
+  GET_CLOUD_FRONT_PUBLIC_KEY = "iam:GetCloudFrontPublicKey",
   GET_CONTEXT_KEYS_FOR_CUSTOM_POLICY = "iam:GetContextKeysForCustomPolicy",
   GET_CONTEXT_KEYS_FOR_PRINCIPAL_POLICY = "iam:GetContextKeysForPrincipalPolicy",
   GET_CREDENTIAL_REPORT = "iam:GetCredentialReport",
@@ -3332,6 +3347,7 @@ export enum IdentityAndAccessManagement {
   LIST_ATTACHED_GROUP_POLICIES = "iam:ListAttachedGroupPolicies",
   LIST_ATTACHED_ROLE_POLICIES = "iam:ListAttachedRolePolicies",
   LIST_ATTACHED_USER_POLICIES = "iam:ListAttachedUserPolicies",
+  LIST_CLOUD_FRONT_PUBLIC_KEYS = "iam:ListCloudFrontPublicKeys",
   LIST_ENTITIES_FOR_POLICY = "iam:ListEntitiesForPolicy",
   LIST_GROUP_POLICIES = "iam:ListGroupPolicies",
   LIST_GROUPS = "iam:ListGroups",
@@ -3353,6 +3369,7 @@ export enum IdentityAndAccessManagement {
   LIST_S_A_M_L_PROVIDER_TAGS = "iam:ListSAMLProviderTags",
   LIST_S_A_M_L_PROVIDERS = "iam:ListSAMLProviders",
   LIST_S_S_H_PUBLIC_KEYS = "iam:ListSSHPublicKeys",
+  LIST_S_T_S_REGIONAL_ENDPOINTS_STATUS = "iam:ListSTSRegionalEndpointsStatus",
   LIST_SERVER_CERTIFICATE_TAGS = "iam:ListServerCertificateTags",
   LIST_SERVER_CERTIFICATES = "iam:ListServerCertificates",
   LIST_SERVICE_SPECIFIC_CREDENTIALS = "iam:ListServiceSpecificCredentials",
@@ -3373,6 +3390,7 @@ export enum IdentityAndAccessManagement {
   RESET_SERVICE_SPECIFIC_CREDENTIAL = "iam:ResetServiceSpecificCredential",
   RESYNC_M_F_A_DEVICE = "iam:ResyncMFADevice",
   SET_DEFAULT_POLICY_VERSION = "iam:SetDefaultPolicyVersion",
+  SET_S_T_S_REGIONAL_ENDPOINT_STATUS = "iam:SetSTSRegionalEndpointStatus",
   SET_SECURITY_TOKEN_SERVICE_PREFERENCES = "iam:SetSecurityTokenServicePreferences",
   SIMULATE_CUSTOM_POLICY = "iam:SimulateCustomPolicy",
   SIMULATE_PRINCIPAL_POLICY = "iam:SimulatePrincipalPolicy",
@@ -3393,8 +3411,11 @@ export enum IdentityAndAccessManagement {
   UNTAG_SERVER_CERTIFICATE = "iam:UntagServerCertificate",
   UNTAG_USER = "iam:UntagUser",
   UPDATE_ACCESS_KEY = "iam:UpdateAccessKey",
+  UPDATE_ACCOUNT_EMAIL_ADDRESS = "iam:UpdateAccountEmailAddress",
+  UPDATE_ACCOUNT_NAME = "iam:UpdateAccountName",
   UPDATE_ACCOUNT_PASSWORD_POLICY = "iam:UpdateAccountPasswordPolicy",
   UPDATE_ASSUME_ROLE_POLICY = "iam:UpdateAssumeRolePolicy",
+  UPDATE_CLOUD_FRONT_PUBLIC_KEY = "iam:UpdateCloudFrontPublicKey",
   UPDATE_GROUP = "iam:UpdateGroup",
   UPDATE_LOGIN_PROFILE = "iam:UpdateLoginProfile",
   UPDATE_OPEN_I_D_CONNECT_PROVIDER_THUMBPRINT = "iam:UpdateOpenIDConnectProviderThumbprint",
@@ -3406,6 +3427,7 @@ export enum IdentityAndAccessManagement {
   UPDATE_SERVICE_SPECIFIC_CREDENTIAL = "iam:UpdateServiceSpecificCredential",
   UPDATE_SIGNING_CERTIFICATE = "iam:UpdateSigningCertificate",
   UPDATE_USER = "iam:UpdateUser",
+  UPLOAD_CLOUD_FRONT_PUBLIC_KEY = "iam:UploadCloudFrontPublicKey",
   UPLOAD_S_S_H_PUBLIC_KEY = "iam:UploadSSHPublicKey",
   UPLOAD_SERVER_CERTIFICATE = "iam:UploadServerCertificate",
   UPLOAD_SIGNING_CERTIFICATE = "iam:UploadSigningCertificate",
@@ -4916,6 +4938,7 @@ export enum AppSync {
   DELETE_RESOLVER = "appsync:DeleteResolver",
   DELETE_TYPE = "appsync:DeleteType",
   DISASSOCIATE_API = "appsync:DisassociateApi",
+  EVALUATE_CODE = "appsync:EvaluateCode",
   EVALUATE_MAPPING_TEMPLATE = "appsync:EvaluateMappingTemplate",
   FLUSH_API_CACHE = "appsync:FlushApiCache",
   GET_API_ASSOCIATION = "appsync:GetApiAssociation",
@@ -6347,6 +6370,7 @@ export enum ElasticMapReduce {
   DETACH_EDITOR = "elasticmapreduce:DetachEditor",
   GET_AUTO_TERMINATION_POLICY = "elasticmapreduce:GetAutoTerminationPolicy",
   GET_BLOCK_PUBLIC_ACCESS_CONFIGURATION = "elasticmapreduce:GetBlockPublicAccessConfiguration",
+  GET_CLUSTER_SESSION_CREDENTIALS = "elasticmapreduce:GetClusterSessionCredentials",
   GET_MANAGED_SCALING_POLICY = "elasticmapreduce:GetManagedScalingPolicy",
   GET_ON_CLUSTER_APP_U_I_PRESIGNED_U_R_L = "elasticmapreduce:GetOnClusterAppUIPresignedURL",
   GET_PERSISTENT_APP_U_I_PRESIGNED_U_R_L = "elasticmapreduce:GetPersistentAppUIPresignedURL",
@@ -6541,14 +6565,19 @@ export enum CloudTrail {
   DEREGISTER_ORGANIZATION_DELEGATED_ADMIN = "cloudtrail:DeregisterOrganizationDelegatedAdmin",
   DESCRIBE_QUERY = "cloudtrail:DescribeQuery",
   DESCRIBE_TRAILS = "cloudtrail:DescribeTrails",
+  GET_CHANNEL = "cloudtrail:GetChannel",
   GET_EVENT_DATA_STORE = "cloudtrail:GetEventDataStore",
   GET_EVENT_SELECTORS = "cloudtrail:GetEventSelectors",
+  GET_IMPORT = "cloudtrail:GetImport",
   GET_INSIGHT_SELECTORS = "cloudtrail:GetInsightSelectors",
   GET_QUERY_RESULTS = "cloudtrail:GetQueryResults",
   GET_SERVICE_LINKED_CHANNEL = "cloudtrail:GetServiceLinkedChannel",
   GET_TRAIL = "cloudtrail:GetTrail",
   GET_TRAIL_STATUS = "cloudtrail:GetTrailStatus",
+  LIST_CHANNELS = "cloudtrail:ListChannels",
   LIST_EVENT_DATA_STORES = "cloudtrail:ListEventDataStores",
+  LIST_IMPORT_FAILURES = "cloudtrail:ListImportFailures",
+  LIST_IMPORTS = "cloudtrail:ListImports",
   LIST_PUBLIC_KEYS = "cloudtrail:ListPublicKeys",
   LIST_QUERIES = "cloudtrail:ListQueries",
   LIST_SERVICE_LINKED_CHANNELS = "cloudtrail:ListServiceLinkedChannels",
@@ -6560,8 +6589,10 @@ export enum CloudTrail {
   REGISTER_ORGANIZATION_DELEGATED_ADMIN = "cloudtrail:RegisterOrganizationDelegatedAdmin",
   REMOVE_TAGS = "cloudtrail:RemoveTags",
   RESTORE_EVENT_DATA_STORE = "cloudtrail:RestoreEventDataStore",
+  START_IMPORT = "cloudtrail:StartImport",
   START_LOGGING = "cloudtrail:StartLogging",
   START_QUERY = "cloudtrail:StartQuery",
+  STOP_IMPORT = "cloudtrail:StopImport",
   STOP_LOGGING = "cloudtrail:StopLogging",
   UPDATE_EVENT_DATA_STORE = "cloudtrail:UpdateEventDataStore",
   UPDATE_SERVICE_LINKED_CHANNEL = "cloudtrail:UpdateServiceLinkedChannel",
@@ -7017,6 +7048,43 @@ export enum Polly {
   PUT_LEXICON = "polly:PutLexicon",
   START_SPEECH_SYNTHESIS_TASK = "polly:StartSpeechSynthesisTask",
   SYNTHESIZE_SPEECH = "polly:SynthesizeSpeech",
+}
+
+export enum CleanRooms {
+  BATCH_GET_SCHEMA = "cleanrooms:BatchGetSchema",
+  CREATE_COLLABORATION = "cleanrooms:CreateCollaboration",
+  CREATE_CONFIGURED_TABLE = "cleanrooms:CreateConfiguredTable",
+  CREATE_CONFIGURED_TABLE_ANALYSIS_RULE = "cleanrooms:CreateConfiguredTableAnalysisRule",
+  CREATE_CONFIGURED_TABLE_ASSOCIATION = "cleanrooms:CreateConfiguredTableAssociation",
+  CREATE_MEMBERSHIP = "cleanrooms:CreateMembership",
+  DELETE_COLLABORATION = "cleanrooms:DeleteCollaboration",
+  DELETE_CONFIGURED_TABLE = "cleanrooms:DeleteConfiguredTable",
+  DELETE_CONFIGURED_TABLE_ANALYSIS_RULE = "cleanrooms:DeleteConfiguredTableAnalysisRule",
+  DELETE_CONFIGURED_TABLE_ASSOCIATION = "cleanrooms:DeleteConfiguredTableAssociation",
+  DELETE_MEMBER = "cleanrooms:DeleteMember",
+  DELETE_MEMBERSHIP = "cleanrooms:DeleteMembership",
+  GET_COLLABORATION = "cleanrooms:GetCollaboration",
+  GET_CONFIGURED_TABLE = "cleanrooms:GetConfiguredTable",
+  GET_CONFIGURED_TABLE_ANALYSIS_RULE = "cleanrooms:GetConfiguredTableAnalysisRule",
+  GET_CONFIGURED_TABLE_ASSOCIATION = "cleanrooms:GetConfiguredTableAssociation",
+  GET_MEMBERSHIP = "cleanrooms:GetMembership",
+  GET_PROTECTED_QUERY = "cleanrooms:GetProtectedQuery",
+  GET_SCHEMA = "cleanrooms:GetSchema",
+  GET_SCHEMA_ANALYSIS_RULE = "cleanrooms:GetSchemaAnalysisRule",
+  LIST_COLLABORATIONS = "cleanrooms:ListCollaborations",
+  LIST_CONFIGURED_TABLE_ASSOCIATIONS = "cleanrooms:ListConfiguredTableAssociations",
+  LIST_CONFIGURED_TABLES = "cleanrooms:ListConfiguredTables",
+  LIST_MEMBERS = "cleanrooms:ListMembers",
+  LIST_MEMBERSHIPS = "cleanrooms:ListMemberships",
+  LIST_PROTECTED_QUERIES = "cleanrooms:ListProtectedQueries",
+  LIST_SCHEMAS = "cleanrooms:ListSchemas",
+  START_PROTECTED_QUERY = "cleanrooms:StartProtectedQuery",
+  UPDATE_COLLABORATION = "cleanrooms:UpdateCollaboration",
+  UPDATE_CONFIGURED_TABLE = "cleanrooms:UpdateConfiguredTable",
+  UPDATE_CONFIGURED_TABLE_ANALYSIS_RULE = "cleanrooms:UpdateConfiguredTableAnalysisRule",
+  UPDATE_CONFIGURED_TABLE_ASSOCIATION = "cleanrooms:UpdateConfiguredTableAssociation",
+  UPDATE_MEMBERSHIP = "cleanrooms:UpdateMembership",
+  UPDATE_PROTECTED_QUERY = "cleanrooms:UpdateProtectedQuery",
 }
 
 export enum AppConfig {
@@ -8638,6 +8706,18 @@ export enum ElasticTranscoder {
   UPDATE_PIPELINE_STATUS = "elastictranscoder:UpdatePipelineStatus",
 }
 
+export enum ConsolidatedBilling {
+  GET_ACCOUNT_BILLING_ROLE = "consolidatedbilling:GetAccountBillingRole",
+  LIST_LINKED_ACCOUNTS = "consolidatedbilling:ListLinkedAccounts",
+}
+
+export enum InvoicingService {
+  GET_INVOICE_EMAIL_DELIVERY_PREFERENCES = "invoicing:GetInvoiceEmailDeliveryPreferences",
+  GET_INVOICE_P_D_F = "invoicing:GetInvoicePDF",
+  LIST_INVOICE_SUMMARIES = "invoicing:ListInvoiceSummaries",
+  PUT_INVOICE_EMAIL_DELIVERY_PREFERENCES = "invoicing:PutInvoiceEmailDeliveryPreferences",
+}
+
 export enum SecurityLake {
   CREATE_AWS_LOG_SOURCE = "securitylake:CreateAwsLogSource",
   CREATE_CUSTOM_LOG_SOURCE = "securitylake:CreateCustomLogSource",
@@ -9038,6 +9118,7 @@ export enum DatabaseMigrationService {
   UPDATE_DATA_PROVIDER = "dms:UpdateDataProvider",
   UPDATE_INSTANCE_PROFILE = "dms:UpdateInstanceProfile",
   UPDATE_MIGRATION_PROJECT = "dms:UpdateMigrationProject",
+  UPDATE_SUBSCRIPTIONS_TO_EVENT_BRIDGE = "dms:UpdateSubscriptionsToEventBridge",
   UPLOAD_FILE_METADATA_LIST = "dms:UploadFileMetadataList",
 }
 
@@ -9083,7 +9164,19 @@ export enum NetworkFirewall {
 }
 
 export enum Billing {
+  GET_BILLING_DATA = "billing:GetBillingData",
+  GET_BILLING_DETAILS = "billing:GetBillingDetails",
+  GET_BILLING_NOTIFICATIONS = "billing:GetBillingNotifications",
+  GET_BILLING_PREFERENCES = "billing:GetBillingPreferences",
+  GET_CONTRACT_INFORMATION = "billing:GetContractInformation",
+  GET_CREDITS = "billing:GetCredits",
+  GET_I_A_M_ACCESS_PREFERENCE = "billing:GetIAMAccessPreference",
+  GET_SELLER_OF_RECORD = "billing:GetSellerOfRecord",
   LIST_BILLING_VIEWS = "billing:ListBillingViews",
+  PUT_CONTRACT_INFORMATION = "billing:PutContractInformation",
+  REDEEM_CREDITS = "billing:RedeemCredits",
+  UPDATE_BILLING_PREFERENCES = "billing:UpdateBillingPreferences",
+  UPDATE_I_A_M_ACCESS_PREFERENCE = "billing:UpdateIAMAccessPreference",
 }
 
 export enum Artifact {
@@ -9363,7 +9456,14 @@ export enum Signer {
 }
 
 export enum PurchaseOrdersConsole {
+  ADD_PURCHASE_ORDER = "purchase-orders:AddPurchaseOrder",
+  DELETE_PURCHASE_ORDER = "purchase-orders:DeletePurchaseOrder",
+  GET_PURCHASE_ORDER = "purchase-orders:GetPurchaseOrder",
+  LIST_PURCHASE_ORDER_INVOICES = "purchase-orders:ListPurchaseOrderInvoices",
+  LIST_PURCHASE_ORDERS = "purchase-orders:ListPurchaseOrders",
   MODIFY_PURCHASE_ORDERS = "purchase-orders:ModifyPurchaseOrders",
+  UPDATE_PURCHASE_ORDER = "purchase-orders:UpdatePurchaseOrder",
+  UPDATE_PURCHASE_ORDER_STATUS = "purchase-orders:UpdatePurchaseOrderStatus",
   VIEW_PURCHASE_ORDERS = "purchase-orders:ViewPurchaseOrders",
 }
 
@@ -10167,6 +10267,16 @@ export enum SecretsManager {
   UPDATE_SECRET = "secretsmanager:UpdateSecret",
   UPDATE_SECRET_VERSION_STAGE = "secretsmanager:UpdateSecretVersionStage",
   VALIDATE_RESOURCE_POLICY = "secretsmanager:ValidateResourcePolicy",
+}
+
+export enum Payments {
+  CREATE_PAYMENT_INSTRUMENT = "payments:CreatePaymentInstrument",
+  DELETE_PAYMENT_INSTRUMENT = "payments:DeletePaymentInstrument",
+  GET_PAYMENT_INSTRUMENT = "payments:GetPaymentInstrument",
+  GET_PAYMENT_STATUS = "payments:GetPaymentStatus",
+  LIST_PAYMENT_PREFERENCES = "payments:ListPaymentPreferences",
+  MAKE_PAYMENT = "payments:MakePayment",
+  UPDATE_PAYMENT_PREFERENCES = "payments:UpdatePaymentPreferences",
 }
 
 export enum ApplicationAutoScaling {
@@ -13188,9 +13298,15 @@ export enum ManagedWorkflowsforApacheAirflow {
 }
 
 export enum TaxSettings {
+  BATCH_PUT_TAX_REGISTRATION = "tax:BatchPutTaxRegistration",
+  DELETE_TAX_REGISTRATION = "tax:DeleteTaxRegistration",
   GET_EXEMPTIONS = "tax:GetExemptions",
+  GET_TAX_INHERITANCE = "tax:GetTaxInheritance",
   GET_TAX_INTERVIEW = "tax:GetTaxInterview",
   GET_TAX_REGISTRATION = "tax:GetTaxRegistration",
+  GET_TAX_REGISTRATION_DOCUMENT = "tax:GetTaxRegistrationDocument",
+  LIST_TAX_REGISTRATIONS = "tax:ListTaxRegistrations",
+  PUT_TAX_INHERITANCE = "tax:PutTaxInheritance",
   PUT_TAX_INTERVIEW = "tax:PutTaxInterview",
   PUT_TAX_REGISTRATION = "tax:PutTaxRegistration",
   UPDATE_EXEMPTIONS = "tax:UpdateExemptions",
@@ -13635,6 +13751,18 @@ export enum Activate {
   GET_MEMBER_INFO = "activate:GetMemberInfo",
   GET_PROGRAM = "activate:GetProgram",
   PUT_MEMBER_INFO = "activate:PutMemberInfo",
+}
+
+export enum KendraIntelligentRanking {
+  CREATE_RESCORE_EXECUTION_PLAN = "kendra-ranking:CreateRescoreExecutionPlan",
+  DELETE_RESCORE_EXECUTION_PLAN = "kendra-ranking:DeleteRescoreExecutionPlan",
+  DESCRIBE_RESCORE_EXECUTION_PLAN = "kendra-ranking:DescribeRescoreExecutionPlan",
+  LIST_RESCORE_EXECUTION_PLANS = "kendra-ranking:ListRescoreExecutionPlans",
+  LIST_TAGS_FOR_RESOURCE = "kendra-ranking:ListTagsForResource",
+  RESCORE = "kendra-ranking:Rescore",
+  TAG_RESOURCE = "kendra-ranking:TagResource",
+  UNTAG_RESOURCE = "kendra-ranking:UntagResource",
+  UPDATE_RESCORE_EXECUTION_PLAN = "kendra-ranking:UpdateRescoreExecutionPlan",
 }
 
 export enum AppIntegrations {
@@ -14795,12 +14923,16 @@ export enum KinesisAnalytics {
 }
 
 export enum AccountManagement {
+  CLOSE_ACCOUNT = "account:CloseAccount",
   DELETE_ALTERNATE_CONTACT = "account:DeleteAlternateContact",
   DISABLE_REGION = "account:DisableRegion",
   ENABLE_REGION = "account:EnableRegion",
+  GET_ACCOUNT_INFORMATION = "account:GetAccountInformation",
   GET_ALTERNATE_CONTACT = "account:GetAlternateContact",
+  GET_CHALLENGE_QUESTIONS = "account:GetChallengeQuestions",
   GET_CONTACT_INFORMATION = "account:GetContactInformation",
   LIST_REGIONS = "account:ListRegions",
   PUT_ALTERNATE_CONTACT = "account:PutAlternateContact",
+  PUT_CHALLENGE_QUESTIONS = "account:PutChallengeQuestions",
   PUT_CONTACT_INFORMATION = "account:PutContactInformation",
 }
