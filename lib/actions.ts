@@ -1244,6 +1244,7 @@ export enum AuditManager {
 }
 
 export enum GuardDuty {
+  ACCEPT_ADMINISTRATOR_INVITATION = "guardduty:AcceptAdministratorInvitation",
   ACCEPT_INVITATION = "guardduty:AcceptInvitation",
   ARCHIVE_FINDINGS = "guardduty:ArchiveFindings",
   CREATE_DETECTOR = "guardduty:CreateDetector",
@@ -1265,9 +1266,11 @@ export enum GuardDuty {
   DESCRIBE_ORGANIZATION_CONFIGURATION = "guardduty:DescribeOrganizationConfiguration",
   DESCRIBE_PUBLISHING_DESTINATION = "guardduty:DescribePublishingDestination",
   DISABLE_ORGANIZATION_ADMIN_ACCOUNT = "guardduty:DisableOrganizationAdminAccount",
+  DISASSOCIATE_FROM_ADMINISTRATOR_ACCOUNT = "guardduty:DisassociateFromAdministratorAccount",
   DISASSOCIATE_FROM_MASTER_ACCOUNT = "guardduty:DisassociateFromMasterAccount",
   DISASSOCIATE_MEMBERS = "guardduty:DisassociateMembers",
   ENABLE_ORGANIZATION_ADMIN_ACCOUNT = "guardduty:EnableOrganizationAdminAccount",
+  GET_ADMINISTRATOR_ACCOUNT = "guardduty:GetAdministratorAccount",
   GET_DETECTOR = "guardduty:GetDetector",
   GET_FILTER = "guardduty:GetFilter",
   GET_FINDINGS = "guardduty:GetFindings",
@@ -1278,6 +1281,7 @@ export enum GuardDuty {
   GET_MASTER_ACCOUNT = "guardduty:GetMasterAccount",
   GET_MEMBER_DETECTORS = "guardduty:GetMemberDetectors",
   GET_MEMBERS = "guardduty:GetMembers",
+  GET_REMAINING_FREE_TRIAL_DAYS = "guardduty:GetRemainingFreeTrialDays",
   GET_THREAT_INTEL_SET = "guardduty:GetThreatIntelSet",
   GET_USAGE_STATISTICS = "guardduty:GetUsageStatistics",
   INVITE_MEMBERS = "guardduty:InviteMembers",
@@ -2853,6 +2857,10 @@ export enum MarketplaceSellerReporting {
   GET_SELLER_DASHBOARD = "aws-marketplace:GetSellerDashboard",
 }
 
+export enum MarketplaceDiscovery {
+  LIST_PRIVATE_LISTINGS = "aws-marketplace:ListPrivateListings",
+}
+
 export enum MarketplaceEntitlementService {
   GET_ENTITLEMENTS = "aws-marketplace:GetEntitlements",
 }
@@ -2869,6 +2877,7 @@ export enum Marketplace {
   GET_AGREEMENT_TERMS = "aws-marketplace:GetAgreementTerms",
   LIST_AGREEMENT_APPROVAL_REQUESTS = "aws-marketplace:ListAgreementApprovalRequests",
   LIST_AGREEMENT_REQUESTS = "aws-marketplace:ListAgreementRequests",
+  LIST_ENTITLEMENT_DETAILS = "aws-marketplace:ListEntitlementDetails",
   REJECT_AGREEMENT_APPROVAL_REQUEST = "aws-marketplace:RejectAgreementApprovalRequest",
   SEARCH_AGREEMENTS = "aws-marketplace:SearchAgreements",
   SUBSCRIBE = "aws-marketplace:Subscribe",
@@ -4381,6 +4390,7 @@ export enum RDSDataAPI {
 export enum SQLWorkbench {
   ASSOCIATE_CONNECTION_WITH_CHART = "sqlworkbench:AssociateConnectionWithChart",
   ASSOCIATE_CONNECTION_WITH_TAB = "sqlworkbench:AssociateConnectionWithTab",
+  ASSOCIATE_NOTEBOOK_WITH_TAB = "sqlworkbench:AssociateNotebookWithTab",
   ASSOCIATE_QUERY_WITH_TAB = "sqlworkbench:AssociateQueryWithTab",
   BATCH_DELETE_FOLDER = "sqlworkbench:BatchDeleteFolder",
   BATCH_GET_NOTEBOOK_CELL = "sqlworkbench:BatchGetNotebookCell",
@@ -4687,10 +4697,12 @@ export enum Config {
   GET_ORGANIZATION_CONFORMANCE_PACK_DETAILED_STATUS = "config:GetOrganizationConformancePackDetailedStatus",
   GET_ORGANIZATION_CUSTOM_RULE_POLICY = "config:GetOrganizationCustomRulePolicy",
   GET_RESOURCE_CONFIG_HISTORY = "config:GetResourceConfigHistory",
+  GET_RESOURCE_EVALUATION_SUMMARY = "config:GetResourceEvaluationSummary",
   GET_STORED_QUERY = "config:GetStoredQuery",
   LIST_AGGREGATE_DISCOVERED_RESOURCES = "config:ListAggregateDiscoveredResources",
   LIST_CONFORMANCE_PACK_COMPLIANCE_SCORES = "config:ListConformancePackComplianceScores",
   LIST_DISCOVERED_RESOURCES = "config:ListDiscoveredResources",
+  LIST_RESOURCE_EVALUATIONS = "config:ListResourceEvaluations",
   LIST_STORED_QUERIES = "config:ListStoredQueries",
   LIST_TAGS_FOR_RESOURCE = "config:ListTagsForResource",
   PUT_AGGREGATION_AUTHORIZATION = "config:PutAggregationAuthorization",
@@ -4713,6 +4725,7 @@ export enum Config {
   START_CONFIG_RULES_EVALUATION = "config:StartConfigRulesEvaluation",
   START_CONFIGURATION_RECORDER = "config:StartConfigurationRecorder",
   START_REMEDIATION_EXECUTION = "config:StartRemediationExecution",
+  START_RESOURCE_EVALUATION = "config:StartResourceEvaluation",
   STOP_CONFIGURATION_RECORDER = "config:StopConfigurationRecorder",
   TAG_RESOURCE = "config:TagResource",
   UNTAG_RESOURCE = "config:UntagResource",
@@ -6695,6 +6708,7 @@ export enum OpenSearchService {
   DESCRIBE_DOMAIN_CHANGE_PROGRESS = "es:DescribeDomainChangeProgress",
   DESCRIBE_DOMAIN_CONFIG = "es:DescribeDomainConfig",
   DESCRIBE_DOMAINS = "es:DescribeDomains",
+  DESCRIBE_DRY_RUN_PROGRESS = "es:DescribeDryRunProgress",
   DESCRIBE_ELASTICSEARCH_DOMAIN = "es:DescribeElasticsearchDomain",
   DESCRIBE_ELASTICSEARCH_DOMAIN_CONFIG = "es:DescribeElasticsearchDomainConfig",
   DESCRIBE_ELASTICSEARCH_DOMAINS = "es:DescribeElasticsearchDomains",
@@ -9504,6 +9518,7 @@ export enum OpenSearchServerless {
 export enum ResourceGroups {
   CREATE_GROUP = "resource-groups:CreateGroup",
   DELETE_GROUP = "resource-groups:DeleteGroup",
+  GET_ACCOUNT_SETTINGS = "resource-groups:GetAccountSettings",
   GET_GROUP = "resource-groups:GetGroup",
   GET_GROUP_CONFIGURATION = "resource-groups:GetGroupConfiguration",
   GET_GROUP_QUERY = "resource-groups:GetGroupQuery",
@@ -9517,6 +9532,7 @@ export enum ResourceGroups {
   TAG = "resource-groups:Tag",
   UNGROUP_RESOURCES = "resource-groups:UngroupResources",
   UNTAG = "resource-groups:Untag",
+  UPDATE_ACCOUNT_SETTINGS = "resource-groups:UpdateAccountSettings",
   UPDATE_GROUP = "resource-groups:UpdateGroup",
   UPDATE_GROUP_QUERY = "resource-groups:UpdateGroupQuery",
 }
@@ -12925,18 +12941,21 @@ export enum RedshiftServerless {
   GET_RECOVERY_POINT = "redshift-serverless:GetRecoveryPoint",
   GET_RESOURCE_POLICY = "redshift-serverless:GetResourcePolicy",
   GET_SNAPSHOT = "redshift-serverless:GetSnapshot",
+  GET_TABLE_RESTORE_STATUS = "redshift-serverless:GetTableRestoreStatus",
   GET_USAGE_LIMIT = "redshift-serverless:GetUsageLimit",
   GET_WORKGROUP = "redshift-serverless:GetWorkgroup",
   LIST_ENDPOINT_ACCESS = "redshift-serverless:ListEndpointAccess",
   LIST_NAMESPACES = "redshift-serverless:ListNamespaces",
   LIST_RECOVERY_POINTS = "redshift-serverless:ListRecoveryPoints",
   LIST_SNAPSHOTS = "redshift-serverless:ListSnapshots",
+  LIST_TABLE_RESTORE_STATUS = "redshift-serverless:ListTableRestoreStatus",
   LIST_TAGS_FOR_RESOURCE = "redshift-serverless:ListTagsForResource",
   LIST_USAGE_LIMITS = "redshift-serverless:ListUsageLimits",
   LIST_WORKGROUPS = "redshift-serverless:ListWorkgroups",
   PUT_RESOURCE_POLICY = "redshift-serverless:PutResourcePolicy",
   RESTORE_FROM_RECOVERY_POINT = "redshift-serverless:RestoreFromRecoveryPoint",
   RESTORE_FROM_SNAPSHOT = "redshift-serverless:RestoreFromSnapshot",
+  RESTORE_TABLE_FROM_SNAPSHOT = "redshift-serverless:RestoreTableFromSnapshot",
   TAG_RESOURCE = "redshift-serverless:TagResource",
   UNTAG_RESOURCE = "redshift-serverless:UntagResource",
   UPDATE_ENDPOINT_ACCESS = "redshift-serverless:UpdateEndpointAccess",
