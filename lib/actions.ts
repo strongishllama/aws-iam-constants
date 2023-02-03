@@ -2525,6 +2525,10 @@ export enum CloudDirectory {
   UPGRADE_PUBLISHED_SCHEMA = "clouddirectory:UpgradePublishedSchema",
 }
 
+export enum CloudTrailData {
+  PUT_AUDIT_EVENTS = "cloudtrail-data:PutAuditEvents",
+}
+
 export enum ElementalMediaTailor {
   CONFIGURE_LOGS_FOR_PLAYBACK_CONFIGURATION = "mediatailor:ConfigureLogsForPlaybackConfiguration",
   CREATE_CHANNEL = "mediatailor:CreateChannel",
@@ -5101,8 +5105,10 @@ export enum CloudWatchRUM {
 
 export enum CloudFront {
   ASSOCIATE_ALIAS = "cloudfront:AssociateAlias",
+  COPY_DISTRIBUTION = "cloudfront:CopyDistribution",
   CREATE_CACHE_POLICY = "cloudfront:CreateCachePolicy",
   CREATE_CLOUD_FRONT_ORIGIN_ACCESS_IDENTITY = "cloudfront:CreateCloudFrontOriginAccessIdentity",
+  CREATE_CONTINUOUS_DEPLOYMENT_POLICY = "cloudfront:CreateContinuousDeploymentPolicy",
   CREATE_DISTRIBUTION = "cloudfront:CreateDistribution",
   CREATE_FIELD_LEVEL_ENCRYPTION_CONFIG = "cloudfront:CreateFieldLevelEncryptionConfig",
   CREATE_FIELD_LEVEL_ENCRYPTION_PROFILE = "cloudfront:CreateFieldLevelEncryptionProfile",
@@ -5120,6 +5126,7 @@ export enum CloudFront {
   CREATE_STREAMING_DISTRIBUTION_WITH_TAGS = "cloudfront:CreateStreamingDistributionWithTags",
   DELETE_CACHE_POLICY = "cloudfront:DeleteCachePolicy",
   DELETE_CLOUD_FRONT_ORIGIN_ACCESS_IDENTITY = "cloudfront:DeleteCloudFrontOriginAccessIdentity",
+  DELETE_CONTINUOUS_DEPLOYMENT_POLICY = "cloudfront:DeleteContinuousDeploymentPolicy",
   DELETE_DISTRIBUTION = "cloudfront:DeleteDistribution",
   DELETE_FIELD_LEVEL_ENCRYPTION_CONFIG = "cloudfront:DeleteFieldLevelEncryptionConfig",
   DELETE_FIELD_LEVEL_ENCRYPTION_PROFILE = "cloudfront:DeleteFieldLevelEncryptionProfile",
@@ -5137,6 +5144,8 @@ export enum CloudFront {
   GET_CACHE_POLICY_CONFIG = "cloudfront:GetCachePolicyConfig",
   GET_CLOUD_FRONT_ORIGIN_ACCESS_IDENTITY = "cloudfront:GetCloudFrontOriginAccessIdentity",
   GET_CLOUD_FRONT_ORIGIN_ACCESS_IDENTITY_CONFIG = "cloudfront:GetCloudFrontOriginAccessIdentityConfig",
+  GET_CONTINUOUS_DEPLOYMENT_POLICY = "cloudfront:GetContinuousDeploymentPolicy",
+  GET_CONTINUOUS_DEPLOYMENT_POLICY_CONFIG = "cloudfront:GetContinuousDeploymentPolicyConfig",
   GET_DISTRIBUTION = "cloudfront:GetDistribution",
   GET_DISTRIBUTION_CONFIG = "cloudfront:GetDistributionConfig",
   GET_FIELD_LEVEL_ENCRYPTION = "cloudfront:GetFieldLevelEncryption",
@@ -5163,6 +5172,7 @@ export enum CloudFront {
   LIST_CACHE_POLICIES = "cloudfront:ListCachePolicies",
   LIST_CLOUD_FRONT_ORIGIN_ACCESS_IDENTITIES = "cloudfront:ListCloudFrontOriginAccessIdentities",
   LIST_CONFLICTING_ALIASES = "cloudfront:ListConflictingAliases",
+  LIST_CONTINUOUS_DEPLOYMENT_POLICIES = "cloudfront:ListContinuousDeploymentPolicies",
   LIST_DISTRIBUTIONS = "cloudfront:ListDistributions",
   LIST_DISTRIBUTIONS_BY_CACHE_POLICY_ID = "cloudfront:ListDistributionsByCachePolicyId",
   LIST_DISTRIBUTIONS_BY_KEY_GROUP = "cloudfront:ListDistributionsByKeyGroup",
@@ -5192,7 +5202,9 @@ export enum CloudFront {
   UNTAG_RESOURCE = "cloudfront:UntagResource",
   UPDATE_CACHE_POLICY = "cloudfront:UpdateCachePolicy",
   UPDATE_CLOUD_FRONT_ORIGIN_ACCESS_IDENTITY = "cloudfront:UpdateCloudFrontOriginAccessIdentity",
+  UPDATE_CONTINUOUS_DEPLOYMENT_POLICY = "cloudfront:UpdateContinuousDeploymentPolicy",
   UPDATE_DISTRIBUTION = "cloudfront:UpdateDistribution",
+  UPDATE_DISTRIBUTION_WITH_STAGING_CONFIG = "cloudfront:UpdateDistributionWithStagingConfig",
   UPDATE_FIELD_LEVEL_ENCRYPTION_CONFIG = "cloudfront:UpdateFieldLevelEncryptionConfig",
   UPDATE_FIELD_LEVEL_ENCRYPTION_PROFILE = "cloudfront:UpdateFieldLevelEncryptionProfile",
   UPDATE_FUNCTION = "cloudfront:UpdateFunction",
@@ -6581,10 +6593,13 @@ export enum BillingConductor {
 export enum CloudTrail {
   ADD_TAGS = "cloudtrail:AddTags",
   CANCEL_QUERY = "cloudtrail:CancelQuery",
+  CREATE_CHANNEL = "cloudtrail:CreateChannel",
   CREATE_EVENT_DATA_STORE = "cloudtrail:CreateEventDataStore",
   CREATE_SERVICE_LINKED_CHANNEL = "cloudtrail:CreateServiceLinkedChannel",
   CREATE_TRAIL = "cloudtrail:CreateTrail",
+  DELETE_CHANNEL = "cloudtrail:DeleteChannel",
   DELETE_EVENT_DATA_STORE = "cloudtrail:DeleteEventDataStore",
+  DELETE_RESOURCE_POLICY = "cloudtrail:DeleteResourcePolicy",
   DELETE_SERVICE_LINKED_CHANNEL = "cloudtrail:DeleteServiceLinkedChannel",
   DELETE_TRAIL = "cloudtrail:DeleteTrail",
   DEREGISTER_ORGANIZATION_DELEGATED_ADMIN = "cloudtrail:DeregisterOrganizationDelegatedAdmin",
@@ -6596,6 +6611,7 @@ export enum CloudTrail {
   GET_IMPORT = "cloudtrail:GetImport",
   GET_INSIGHT_SELECTORS = "cloudtrail:GetInsightSelectors",
   GET_QUERY_RESULTS = "cloudtrail:GetQueryResults",
+  GET_RESOURCE_POLICY = "cloudtrail:GetResourcePolicy",
   GET_SERVICE_LINKED_CHANNEL = "cloudtrail:GetServiceLinkedChannel",
   GET_TRAIL = "cloudtrail:GetTrail",
   GET_TRAIL_STATUS = "cloudtrail:GetTrailStatus",
@@ -6611,6 +6627,7 @@ export enum CloudTrail {
   LOOKUP_EVENTS = "cloudtrail:LookupEvents",
   PUT_EVENT_SELECTORS = "cloudtrail:PutEventSelectors",
   PUT_INSIGHT_SELECTORS = "cloudtrail:PutInsightSelectors",
+  PUT_RESOURCE_POLICY = "cloudtrail:PutResourcePolicy",
   REGISTER_ORGANIZATION_DELEGATED_ADMIN = "cloudtrail:RegisterOrganizationDelegatedAdmin",
   REMOVE_TAGS = "cloudtrail:RemoveTags",
   RESTORE_EVENT_DATA_STORE = "cloudtrail:RestoreEventDataStore",
@@ -6619,6 +6636,7 @@ export enum CloudTrail {
   START_QUERY = "cloudtrail:StartQuery",
   STOP_IMPORT = "cloudtrail:StopImport",
   STOP_LOGGING = "cloudtrail:StopLogging",
+  UPDATE_CHANNEL = "cloudtrail:UpdateChannel",
   UPDATE_EVENT_DATA_STORE = "cloudtrail:UpdateEventDataStore",
   UPDATE_SERVICE_LINKED_CHANNEL = "cloudtrail:UpdateServiceLinkedChannel",
   UPDATE_TRAIL = "cloudtrail:UpdateTrail",
@@ -9813,6 +9831,7 @@ export enum ManagedGrafana {
   DELETE_WORKSPACE_API_KEY = "grafana:DeleteWorkspaceApiKey",
   DESCRIBE_WORKSPACE = "grafana:DescribeWorkspace",
   DESCRIBE_WORKSPACE_AUTHENTICATION = "grafana:DescribeWorkspaceAuthentication",
+  DESCRIBE_WORKSPACE_CONFIGURATION = "grafana:DescribeWorkspaceConfiguration",
   DISASSOCIATE_LICENSE = "grafana:DisassociateLicense",
   LIST_PERMISSIONS = "grafana:ListPermissions",
   LIST_TAGS_FOR_RESOURCE = "grafana:ListTagsForResource",
@@ -9822,6 +9841,7 @@ export enum ManagedGrafana {
   UPDATE_PERMISSIONS = "grafana:UpdatePermissions",
   UPDATE_WORKSPACE = "grafana:UpdateWorkspace",
   UPDATE_WORKSPACE_AUTHENTICATION = "grafana:UpdateWorkspaceAuthentication",
+  UPDATE_WORKSPACE_CONFIGURATION = "grafana:UpdateWorkspaceConfiguration",
 }
 
 export enum AppMesh {
@@ -10458,6 +10478,8 @@ export enum KinesisVideoStreams {
   DELETE_STREAM = "kinesisvideo:DeleteStream",
   DESCRIBE_EDGE_CONFIGURATION = "kinesisvideo:DescribeEdgeConfiguration",
   DESCRIBE_IMAGE_GENERATION_CONFIGURATION = "kinesisvideo:DescribeImageGenerationConfiguration",
+  DESCRIBE_MAPPED_RESOURCE_CONFIGURATION = "kinesisvideo:DescribeMappedResourceConfiguration",
+  DESCRIBE_MEDIA_STORAGE_CONFIGURATION = "kinesisvideo:DescribeMediaStorageConfiguration",
   DESCRIBE_NOTIFICATION_CONFIGURATION = "kinesisvideo:DescribeNotificationConfiguration",
   DESCRIBE_SIGNALING_CHANNEL = "kinesisvideo:DescribeSignalingChannel",
   DESCRIBE_STREAM = "kinesisvideo:DescribeStream",
@@ -10470,6 +10492,7 @@ export enum KinesisVideoStreams {
   GET_MEDIA = "kinesisvideo:GetMedia",
   GET_MEDIA_FOR_FRAGMENT_LIST = "kinesisvideo:GetMediaForFragmentList",
   GET_SIGNALING_CHANNEL_ENDPOINT = "kinesisvideo:GetSignalingChannelEndpoint",
+  JOIN_STORAGE_SESSION = "kinesisvideo:JoinStorageSession",
   LIST_FRAGMENTS = "kinesisvideo:ListFragments",
   LIST_SIGNALING_CHANNELS = "kinesisvideo:ListSignalingChannels",
   LIST_STREAMS = "kinesisvideo:ListStreams",
@@ -10484,6 +10507,7 @@ export enum KinesisVideoStreams {
   UNTAG_STREAM = "kinesisvideo:UntagStream",
   UPDATE_DATA_RETENTION = "kinesisvideo:UpdateDataRetention",
   UPDATE_IMAGE_GENERATION_CONFIGURATION = "kinesisvideo:UpdateImageGenerationConfiguration",
+  UPDATE_MEDIA_STORAGE_CONFIGURATION = "kinesisvideo:UpdateMediaStorageConfiguration",
   UPDATE_NOTIFICATION_CONFIGURATION = "kinesisvideo:UpdateNotificationConfiguration",
   UPDATE_SIGNALING_CHANNEL = "kinesisvideo:UpdateSignalingChannel",
   UPDATE_STREAM = "kinesisvideo:UpdateStream",
@@ -14646,6 +14670,7 @@ export enum CodeArtifact {
   CREATE_REPOSITORY = "codeartifact:CreateRepository",
   DELETE_DOMAIN = "codeartifact:DeleteDomain",
   DELETE_DOMAIN_PERMISSIONS_POLICY = "codeartifact:DeleteDomainPermissionsPolicy",
+  DELETE_PACKAGE = "codeartifact:DeletePackage",
   DELETE_PACKAGE_VERSIONS = "codeartifact:DeletePackageVersions",
   DELETE_REPOSITORY = "codeartifact:DeleteRepository",
   DELETE_REPOSITORY_PERMISSIONS_POLICY = "codeartifact:DeleteRepositoryPermissionsPolicy",
