@@ -1,3 +1,7 @@
+# Deprecation Notice
+
+Hi all, I'm deprecating this repository as I've moved the functionality provided in this package over to this [repository](https://github.com/strongishllama/terraform-cdk-constructs).
+
 # AWS IAM Constants
 
 ![NPN version](https://img.shields.io/npm/v/@strongishllama/aws-iam-constants)
